@@ -3,8 +3,6 @@ package com.amdexa.misc.arm.api;
 import com.amdexa.misc.arm.model.Empty;
 import com.amdexa.misc.arm.model.Loginrequest;
 import com.amdexa.misc.arm.model.Loginresponse;
-import com.amdexa.misc.arm.model.RotatePasswordRequest;
-import com.amdexa.misc.arm.model.RotatePasswordResp;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -60,28 +58,14 @@ public class UserApiController implements UserApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<Loginresponse>(objectMapper.readValue("{  \"SessionID\" : \"SessionID\"}", Loginresponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"SessionID\" : \"SessionID\"}", Loginresponse.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Loginresponse>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<Loginresponse>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<RotatePasswordResp> userRotatepasswordPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Rotate Password (which allows you to rotate the password for the Systems API User) endpoint request body is a JSON Object following the rotatePasswordRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody RotatePasswordRequest rotatePasswordRequest) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<RotatePasswordResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"CloudAPIUserPassword\" : \"CloudAPIUserPassword\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", RotatePasswordResp.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<RotatePasswordResp>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        return new ResponseEntity<RotatePasswordResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }

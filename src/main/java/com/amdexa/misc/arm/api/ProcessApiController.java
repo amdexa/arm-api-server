@@ -40,84 +40,84 @@ public class ProcessApiController implements ProcessApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<GeneralSuccessResp> processBankruptcyPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The bankruptcy endpoint request body is a JSON Object following the bankruptcyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody BankruptcyRequest bankruptcyRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<GeneralSuccessResp> processCeasePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The cease and desist endpoint request body is a JSON Object following the ceaseAndDesistRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody CeaseRequest ceaseRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<GeneralSuccessResp> processDeceasedPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The deceased endpoint request body is a JSON Object following the deceasedRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeceasedRequest deceasedRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<GeneralSuccessResp> processDisputePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The dispute endpoint request body is a JSON Object following the disputeRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DisputeRequest disputeRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<GeneralSuccessResp> processInsurancePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The insurance endpoint request body is a JSON Object following the insuranceRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody InsuranceRequest insuranceRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<GeneralSuccessResp>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<GeneralSuccessResp>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<GeneralSuccessResp>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }
