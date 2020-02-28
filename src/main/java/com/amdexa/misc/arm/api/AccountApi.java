@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @Api(value = "account", description = "the account API")
 public interface AccountApi {
 
-    @ApiOperation(value = "", nickname = "accountSearchbyaccountnumberPost", notes = "Used to search for accounts by account number", response = AccountSearchResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "searchByAccountNumber", notes = "Used to search for accounts by account number", response = AccountSearchResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
@@ -28,10 +28,10 @@ public interface AccountApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<AccountSearchResp> accountSearchbyaccountnumberPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Account Search by account number endpoint request body is a JSON Object follows the accountSearchByAccountNumberRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByAccountNumberRequest accountSearchByAccountNumberRequest);
+    ResponseEntity<AccountSearchResp> searchByAccountNumber(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Account Search by account number endpoint request body is a JSON Object follows the accountSearchByAccountNumberRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByAccountNumberRequest accountSearchByAccountNumberRequest);
 
 
-    @ApiOperation(value = "", nickname = "accountSearchbynamePost", notes = "Used to search for accounts by consumer name", response = AccountSearchResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "searchByName", notes = "Used to search for accounts by consumer name", response = AccountSearchResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
@@ -45,10 +45,10 @@ public interface AccountApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<AccountSearchResp> accountSearchbynamePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Account Search by name endpoint request body is a JSON Object follows the accountSearchByNameRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByNameRequest accountSearchByNameRequest);
+    ResponseEntity<AccountSearchResp> searchByName(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Account Search by name endpoint request body is a JSON Object follows the accountSearchByNameRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByNameRequest accountSearchByNameRequest);
 
 
-    @ApiOperation(value = "", nickname = "accountSearchbyphonePost", notes = "Used to search for accounts by consumer phone number", response = AccountSearchResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "searchByPhone", notes = "Used to search for accounts by consumer phone number", response = AccountSearchResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
@@ -62,10 +62,10 @@ public interface AccountApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<AccountSearchResp> accountSearchbyphonePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Account Search by Phone endpoint request body is a JSON Object follows the accountSearchByPhoneRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByPhoneRequest accountSearchByPhoneRequest);
+    ResponseEntity<AccountSearchResp> searchByPhone(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Account Search by Phone endpoint request body is a JSON Object follows the accountSearchByPhoneRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchByPhoneRequest accountSearchByPhoneRequest);
 
 
-    @ApiOperation(value = "", nickname = "accountSearchbyssnPost", notes = "Used to search for accounts by consumer SSN", response = AccountSearchResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "searchBySSN", notes = "Used to search for accounts by consumer SSN", response = AccountSearchResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
@@ -79,6 +79,6 @@ public interface AccountApi {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<AccountSearchResp> accountSearchbyssnPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Account Search by ssn endpoint request body is a JSON Object follows the accountSearchBySSNRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchBySSNRequest accountSearchBySSNRequest);
+    ResponseEntity<AccountSearchResp> searchBySSN(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Account Search by ssn endpoint request body is a JSON Object follows the accountSearchBySSNRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody AccountSearchBySSNRequest accountSearchBySSNRequest);
 
 }
