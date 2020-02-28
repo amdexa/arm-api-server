@@ -17,8 +17,8 @@ public class ImmedPaymentCCResp   {
   @JsonProperty("Status")
   private String status = null;
 
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
   @JsonProperty("HistoryId")
   private String historyId = null;
@@ -58,24 +58,24 @@ public class ImmedPaymentCCResp   {
     this.status = status;
   }
 
-  public ImmedPaymentCCResp xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public ImmedPaymentCCResp correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
    * The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.
-   * @return xcloudCorrelationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
   public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setXcloudCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
   public ImmedPaymentCCResp historyId(String historyId) {
@@ -209,7 +209,7 @@ public class ImmedPaymentCCResp   {
     }
     ImmedPaymentCCResp immedPaymentCCResp = (ImmedPaymentCCResp) o;
     return Objects.equals(this.status, immedPaymentCCResp.status) &&
-        Objects.equals(this.xcloudCorrelationID, immedPaymentCCResp.xcloudCorrelationID) &&
+        Objects.equals(this.correlationID, immedPaymentCCResp.correlationID) &&
         Objects.equals(this.historyId, immedPaymentCCResp.historyId) &&
         Objects.equals(this.paymentReference, immedPaymentCCResp.paymentReference) &&
         Objects.equals(this.cardBrand, immedPaymentCCResp.cardBrand) &&
@@ -220,7 +220,7 @@ public class ImmedPaymentCCResp   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, xcloudCorrelationID, historyId, paymentReference, cardBrand, cardLast4, cardExpirationDate, isDebitCard);
+    return Objects.hash(status, correlationID, historyId, paymentReference, cardBrand, cardLast4, cardExpirationDate, isDebitCard);
   }
 
   @Override
@@ -229,7 +229,7 @@ public class ImmedPaymentCCResp   {
     sb.append("class ImmedPaymentCCResp {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("    historyId: ").append(toIndentedString(historyId)).append("\n");
     sb.append("    paymentReference: ").append(toIndentedString(paymentReference)).append("\n");
     sb.append("    cardBrand: ").append(toIndentedString(cardBrand)).append("\n");

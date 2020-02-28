@@ -61,7 +61,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -75,7 +75,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -89,7 +89,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -103,7 +103,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -131,7 +131,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -145,7 +145,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -173,7 +173,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"XCloudCorrelationID\" : \"XCloudCorrelationID\",  \"Payments\" : [ {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"RemainingBalance\" : \"RemainingBalance\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"Accounts\" : [ {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    }, {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    } ]  }, {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"RemainingBalance\" : \"RemainingBalance\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"Accounts\" : [ {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    }, {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    } ]  } ]}", PaymentHistoryResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"correlationID\" : \"correlationID\",  \"Payments\" : [ {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"RemainingBalance\" : \"RemainingBalance\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"Accounts\" : [ {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    }, {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    } ]  }, {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"RemainingBalance\" : \"RemainingBalance\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"Accounts\" : [ {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    }, {      \"Amount\" : \"Amount\",      \"CreditorAccountNumber\" : \"CreditorAccountNumber\",      \"AccountName\" : \"AccountName\",      \"FeeAmount\" : \"FeeAmount\"    } ]  } ]}", PaymentHistoryResponse.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -187,7 +187,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"BankName\" : \"BankName\",  \"PaymentReference\" : \"PaymentReference\",  \"HistoryId\" : \"HistoryId\",  \"AccountLast4\" : \"AccountLast4\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\",  \"ABANumber\" : \"ABANumber\",  \"AccountType\" : \"AccountType\"}", ImmedPaymentACHResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"BankName\" : \"BankName\",  \"PaymentReference\" : \"PaymentReference\",  \"HistoryId\" : \"HistoryId\",  \"AccountLast4\" : \"AccountLast4\",  \"correlationID\" : \"correlationID\",  \"ABANumber\" : \"ABANumber\",  \"AccountType\" : \"AccountType\"}", ImmedPaymentACHResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -201,7 +201,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"CardExpirationDate\" : \"CardExpirationDate\",  \"PaymentReference\" : \"PaymentReference\",  \"HistoryId\" : \"HistoryId\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\",  \"IsDebitCard\" : true,  \"CardBrand\" : \"CardBrand\",  \"CardLast4\" : \"CardLast4\"}", ImmedPaymentCCResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"CardExpirationDate\" : \"CardExpirationDate\",  \"PaymentReference\" : \"PaymentReference\",  \"HistoryId\" : \"HistoryId\",  \"correlationID\" : \"correlationID\",  \"IsDebitCard\" : true,  \"CardBrand\" : \"CardBrand\",  \"CardLast4\" : \"CardLast4\"}", ImmedPaymentCCResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -229,7 +229,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"XCloudCorrelationID\" : \"XCloudCorrelationID\",  \"PendingPaymentsSet\" : [ {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"PaymentId\" : \"PaymentId\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"PaymentScheduleId\" : \"PaymentScheduleId\",    \"PSInstrumentId\" : \"PSInstrumentId\",    \"PSToken\" : \"PSToken\"  }, {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"PaymentId\" : \"PaymentId\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"PaymentScheduleId\" : \"PaymentScheduleId\",    \"PSInstrumentId\" : \"PSInstrumentId\",    \"PSToken\" : \"PSToken\"  } ]}", PendingPaymentsResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"correlationID\" : \"correlationID\",  \"PendingPaymentsSet\" : [ {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"PaymentId\" : \"PaymentId\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"PaymentScheduleId\" : \"PaymentScheduleId\",    \"PSInstrumentId\" : \"PSInstrumentId\",    \"PSToken\" : \"PSToken\"  }, {    \"PaymentDate\" : \"PaymentDate\",    \"Reference\" : \"Reference\",    \"PaymentId\" : \"PaymentId\",    \"PaymentType\" : \"PaymentType\",    \"PaymentAmount\" : \"PaymentAmount\",    \"PaymentScheduleId\" : \"PaymentScheduleId\",    \"PSInstrumentId\" : \"PSInstrumentId\",    \"PSToken\" : \"PSToken\"  } ]}", PendingPaymentsResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -243,7 +243,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -257,7 +257,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -285,7 +285,7 @@ public class PaymentApiController implements PaymentApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"PIID\" : \"PIID\",  \"CardExpirationDate\" : \"CardExpirationDate\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\",  \"IsDebitCard\" : true,  \"CardBrand\" : \"CardBrand\",  \"PaymentToken\" : \"PaymentToken\",  \"CardLast4\" : \"CardLast4\"}", TokenizePaymentMethodCCResponse.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"PIID\" : \"PIID\",  \"CardExpirationDate\" : \"CardExpirationDate\",  \"correlationID\" : \"correlationID\",  \"IsDebitCard\" : true,  \"CardBrand\" : \"CardBrand\",  \"PaymentToken\" : \"PaymentToken\",  \"CardLast4\" : \"CardLast4\"}", TokenizePaymentMethodCCResponse.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

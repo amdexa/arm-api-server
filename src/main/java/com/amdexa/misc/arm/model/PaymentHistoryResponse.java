@@ -18,31 +18,31 @@ import javax.validation.Valid;
 
 
 public class PaymentHistoryResponse   {
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
   @JsonProperty("Payments")
   @Valid
   private List<PaymentHistoryResponsePayments> payments = null;
 
-  public PaymentHistoryResponse xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public PaymentHistoryResponse correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
    * The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.
-   * @return xcloudCorrelationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
   public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setXcloudCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
   public PaymentHistoryResponse payments(List<PaymentHistoryResponsePayments> payments) {
@@ -84,13 +84,13 @@ public class PaymentHistoryResponse   {
       return false;
     }
     PaymentHistoryResponse paymentHistoryResponse = (PaymentHistoryResponse) o;
-    return Objects.equals(this.xcloudCorrelationID, paymentHistoryResponse.xcloudCorrelationID) &&
+    return Objects.equals(this.correlationID, paymentHistoryResponse.correlationID) &&
         Objects.equals(this.payments, paymentHistoryResponse.payments);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(xcloudCorrelationID, payments);
+    return Objects.hash(correlationID, payments);
   }
 
   @Override
@@ -98,7 +98,7 @@ public class PaymentHistoryResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class PaymentHistoryResponse {\n");
     
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("    payments: ").append(toIndentedString(payments)).append("\n");
     sb.append("}");
     return sb.toString();

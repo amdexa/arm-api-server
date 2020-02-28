@@ -1,14 +1,8 @@
 
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.Cloudapierror;
-import com.amdexa.misc.arm.model.DisputeRequest;
-import com.amdexa.misc.arm.model.AttorneyRequest;
-import com.amdexa.misc.arm.model.BankruptcyRequest;
-import com.amdexa.misc.arm.model.CeaseRequest;
-import com.amdexa.misc.arm.model.DeceasedRequest;
-import com.amdexa.misc.arm.model.GeneralSuccessResp;
-import com.amdexa.misc.arm.model.InsuranceRequest;
+import com.amdexa.misc.arm.model.*;
+import com.amdexa.misc.arm.model.APIError;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,11 +22,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/attorney",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -45,11 +39,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/bankruptcy",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -62,11 +56,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/cease",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -79,11 +73,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/deceased",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -96,11 +90,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/dispute",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -113,11 +107,11 @@ public interface ProcessApi {
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/process/insurance",
         produces = { "application/json" }, 
         consumes = { "application/json" },

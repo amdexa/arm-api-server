@@ -9,18 +9,18 @@ import org.springframework.validation.annotation.Validated;
 /**
  * Cloud API Error Response Object
  */
-@ApiModel(description = "Cloud API Error Response Object")
+@ApiModel(description = "API Error Response Object")
 @Validated
 
 
-public class Cloudapierror   {
+public class APIError {
   @JsonProperty("Error")
   private String error = null;
 
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
-  public Cloudapierror error(String error) {
+  public APIError error(String error) {
     this.error = error;
     return this;
   }
@@ -40,24 +40,24 @@ public class Cloudapierror   {
     this.error = error;
   }
 
-  public Cloudapierror xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public APIError correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
-   * Get xcloudCorrelationID
-   * @return xcloudCorrelationID
+   * Get correlationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "")
 
 
-  public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+  public String getCorrelationID() {
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
 
@@ -69,23 +69,23 @@ public class Cloudapierror   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Cloudapierror cloudapierror = (Cloudapierror) o;
-    return Objects.equals(this.error, cloudapierror.error) &&
-        Objects.equals(this.xcloudCorrelationID, cloudapierror.xcloudCorrelationID);
+    APIError APIError = (APIError) o;
+    return Objects.equals(this.error, APIError.error) &&
+        Objects.equals(this.correlationID, APIError.correlationID);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, xcloudCorrelationID);
+    return Objects.hash(error, correlationID);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Cloudapierror {\n");
+    sb.append("class APIError {\n");
     
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("}");
     return sb.toString();
   }

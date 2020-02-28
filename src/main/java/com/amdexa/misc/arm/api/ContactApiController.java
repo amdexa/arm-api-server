@@ -37,7 +37,7 @@ public class ContactApiController implements ContactApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -51,7 +51,7 @@ public class ContactApiController implements ContactApi {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"XCloudCorrelationID\" : \"XCloudCorrelationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<>(objectMapper.readValue("{  \"Status\" : \"Status\",  \"correlationID\" : \"correlationID\"}", GeneralSuccessResp.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

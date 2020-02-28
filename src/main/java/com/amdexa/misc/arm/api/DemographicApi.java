@@ -1,27 +1,7 @@
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.AddressRequest;
-import com.amdexa.misc.arm.model.AddressResponse;
-import com.amdexa.misc.arm.model.Cloudapierror;
-import com.amdexa.misc.arm.model.DeleteAddressRequest;
-import com.amdexa.misc.arm.model.DeleteEmailRequest;
-import com.amdexa.misc.arm.model.DeletePhoneRequest;
-import com.amdexa.misc.arm.model.FinancialProfileRequest;
-import com.amdexa.misc.arm.model.FinancialProfileResponse;
-import com.amdexa.misc.arm.model.GeneralSuccessResp;
-import com.amdexa.misc.arm.model.MaritalStatusRequest;
-import com.amdexa.misc.arm.model.MaritalStatusResponse;
-import com.amdexa.misc.arm.model.PoeRequest;
-import com.amdexa.misc.arm.model.PoeResponse;
-import com.amdexa.misc.arm.model.SpouseRequest;
-import com.amdexa.misc.arm.model.SpouseResponse;
-import com.amdexa.misc.arm.model.UpdateAddressRequest;
-import com.amdexa.misc.arm.model.UpdateEmailRequest;
-import com.amdexa.misc.arm.model.UpdateFinancialProfileRequest;
-import com.amdexa.misc.arm.model.UpdateMaritalStatusRequest;
-import com.amdexa.misc.arm.model.UpdatePhoneRequest;
-import com.amdexa.misc.arm.model.UpdatePoeRequest;
-import com.amdexa.misc.arm.model.UpdateSpouseRequest;
+import com.amdexa.misc.arm.model.*;
+import com.amdexa.misc.arm.model.APIError;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,11 +20,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/address/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -57,11 +37,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = AddressResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/address/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -74,11 +54,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/address/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -91,11 +71,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/emailaddress/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -108,11 +88,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/emailaddress/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -125,11 +105,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = FinancialProfileResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/financialprofile/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -142,11 +122,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/financialprofile/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -159,11 +139,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = MaritalStatusResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/maritalstatus/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -176,11 +156,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/maritalstatus/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -193,11 +173,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/phone/{consumerId}/{phoneNumber}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -210,11 +190,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/phone/{consumerId}/{phoneNumber}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -227,11 +207,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = PoeResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/poe/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -244,11 +224,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/poe/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -261,11 +241,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = SpouseResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/spouse/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -278,11 +258,11 @@ public interface DemographicApi {
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/demographic/spouse/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },

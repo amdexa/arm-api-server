@@ -1,7 +1,7 @@
 
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.Cloudapierror;
+import com.amdexa.misc.arm.model.APIError;
 import com.amdexa.misc.arm.model.Empty;
 import com.amdexa.misc.arm.model.Loginrequest;
 import com.amdexa.misc.arm.model.Loginresponse;
@@ -25,10 +25,10 @@ public interface UserApi {
     }, tags={ "User API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = Loginresponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/user/checkloginresponse/{requestId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -41,11 +41,11 @@ public interface UserApi {
     }, tags={ "User API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request"),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/user/checkresponse/{requestId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -58,10 +58,10 @@ public interface UserApi {
     }, tags={ "User API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = Loginresponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/user/login",
         produces = { "application/json" }, 
         consumes = { "application/json" },

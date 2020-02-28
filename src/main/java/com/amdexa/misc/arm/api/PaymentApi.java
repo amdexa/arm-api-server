@@ -1,33 +1,7 @@
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.CardTypeCalcRequest;
-import com.amdexa.misc.arm.model.CardTypeCalcResponse;
-import com.amdexa.misc.arm.model.Cloudapierror;
-import com.amdexa.misc.arm.model.CreatePaymentArrangementRequest;
-import com.amdexa.misc.arm.model.CreateSinglePaymentRequest;
-import com.amdexa.misc.arm.model.DeletePAPaymentRequest;
-import com.amdexa.misc.arm.model.DeletePaymentArrangementRequest;
-import com.amdexa.misc.arm.model.DeletePaymentRequest;
-import com.amdexa.misc.arm.model.Empty;
-import com.amdexa.misc.arm.model.FeeByPercentCalcRequest;
-import com.amdexa.misc.arm.model.FeeByPercentCalcResponse;
-import com.amdexa.misc.arm.model.GeneralSuccessResp;
-import com.amdexa.misc.arm.model.ImmedPaymentACHRequest;
-import com.amdexa.misc.arm.model.ImmedPaymentACHResp;
-import com.amdexa.misc.arm.model.ImmedPaymentCCRequest;
-import com.amdexa.misc.arm.model.ImmedPaymentCCResp;
-import com.amdexa.misc.arm.model.ImmediatePaymentTokenResponse;
-import com.amdexa.misc.arm.model.ImmediatePaymentWithTokenRequest;
-import com.amdexa.misc.arm.model.PaymentHistoryRequest;
-import com.amdexa.misc.arm.model.PaymentHistoryResponse;
-import com.amdexa.misc.arm.model.PendingPaymentsResp;
-import com.amdexa.misc.arm.model.ScheduleRequest;
-import com.amdexa.misc.arm.model.TokenizePaymentACHRequest;
-import com.amdexa.misc.arm.model.TokenizePaymentACHResponse;
-import com.amdexa.misc.arm.model.TokenizePaymentMethodCCRequest;
-import com.amdexa.misc.arm.model.TokenizePaymentMethodCCResponse;
-import com.amdexa.misc.arm.model.UpdatePAPaymentRequest;
-import com.amdexa.misc.arm.model.UpdatePaymentRequest;
+import com.amdexa.misc.arm.model.*;
+import com.amdexa.misc.arm.model.APIError;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,11 +20,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/arranged/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -63,11 +37,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/arranged/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -80,11 +54,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/arrangement/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -97,11 +71,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/arrangement",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -114,11 +88,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = CardTypeCalcResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/cardtypecalc",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -131,11 +105,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -148,11 +122,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -165,11 +139,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = FeeByPercentCalcResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/feebypercentcalc",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -182,11 +156,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = PaymentHistoryResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/history/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -199,11 +173,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = ImmedPaymentACHResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/immediateach",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -216,11 +190,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = ImmedPaymentCCResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/immediatecard",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -233,11 +207,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = ImmediatePaymentTokenResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/immediatewithtoken",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -250,11 +224,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = PendingPaymentsResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/pending/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -267,11 +241,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -284,11 +258,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = GeneralSuccessResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/schedule",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -301,11 +275,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = TokenizePaymentACHResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/tokenizemethodach",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -318,11 +292,11 @@ public interface PaymentApi {
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = TokenizePaymentMethodCCResponse.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/payment/tokenizemethodcc",
         produces = { "application/json" }, 
         consumes = { "application/json" },

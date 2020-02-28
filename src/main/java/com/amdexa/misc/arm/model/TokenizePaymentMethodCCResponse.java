@@ -17,8 +17,8 @@ public class TokenizePaymentMethodCCResponse   {
   @JsonProperty("Status")
   private String status = null;
 
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
   @JsonProperty("PIID")
   private String PIID = null;
@@ -58,24 +58,24 @@ public class TokenizePaymentMethodCCResponse   {
     this.status = status;
   }
 
-  public TokenizePaymentMethodCCResponse xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public TokenizePaymentMethodCCResponse correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
    * The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.
-   * @return xcloudCorrelationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
   public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setXcloudCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
   public TokenizePaymentMethodCCResponse PIID(String PIID) {
@@ -209,7 +209,7 @@ public class TokenizePaymentMethodCCResponse   {
     }
     TokenizePaymentMethodCCResponse tokenizePaymentMethodCCResponse = (TokenizePaymentMethodCCResponse) o;
     return Objects.equals(this.status, tokenizePaymentMethodCCResponse.status) &&
-        Objects.equals(this.xcloudCorrelationID, tokenizePaymentMethodCCResponse.xcloudCorrelationID) &&
+        Objects.equals(this.correlationID, tokenizePaymentMethodCCResponse.correlationID) &&
         Objects.equals(this.PIID, tokenizePaymentMethodCCResponse.PIID) &&
         Objects.equals(this.paymentToken, tokenizePaymentMethodCCResponse.paymentToken) &&
         Objects.equals(this.cardBrand, tokenizePaymentMethodCCResponse.cardBrand) &&
@@ -220,7 +220,7 @@ public class TokenizePaymentMethodCCResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, xcloudCorrelationID, PIID, paymentToken, cardBrand, cardLast4, cardExpirationDate, isDebitCard);
+    return Objects.hash(status, correlationID, PIID, paymentToken, cardBrand, cardLast4, cardExpirationDate, isDebitCard);
   }
 
   @Override
@@ -229,7 +229,7 @@ public class TokenizePaymentMethodCCResponse   {
     sb.append("class TokenizePaymentMethodCCResponse {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("    PIID: ").append(toIndentedString(PIID)).append("\n");
     sb.append("    paymentToken: ").append(toIndentedString(paymentToken)).append("\n");
     sb.append("    cardBrand: ").append(toIndentedString(cardBrand)).append("\n");

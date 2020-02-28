@@ -17,8 +17,8 @@ public class GeneralSuccessResp   {
   @JsonProperty("Status")
   private String status = null;
 
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
   public GeneralSuccessResp status(String status) {
     this.status = status;
@@ -40,24 +40,24 @@ public class GeneralSuccessResp   {
     this.status = status;
   }
 
-  public GeneralSuccessResp xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public GeneralSuccessResp correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
    * The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.
-   * @return xcloudCorrelationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
   public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setXcloudCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
 
@@ -71,12 +71,12 @@ public class GeneralSuccessResp   {
     }
     GeneralSuccessResp generalSuccessResp = (GeneralSuccessResp) o;
     return Objects.equals(this.status, generalSuccessResp.status) &&
-        Objects.equals(this.xcloudCorrelationID, generalSuccessResp.xcloudCorrelationID);
+        Objects.equals(this.correlationID, generalSuccessResp.correlationID);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, xcloudCorrelationID);
+    return Objects.hash(status, correlationID);
   }
 
   @Override
@@ -85,7 +85,7 @@ public class GeneralSuccessResp   {
     sb.append("class GeneralSuccessResp {\n");
     
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("}");
     return sb.toString();
   }

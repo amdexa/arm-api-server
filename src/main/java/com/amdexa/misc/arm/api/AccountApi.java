@@ -1,11 +1,7 @@
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.AccountSearchByAccountNumberRequest;
-import com.amdexa.misc.arm.model.AccountSearchByNameRequest;
-import com.amdexa.misc.arm.model.AccountSearchByPhoneRequest;
-import com.amdexa.misc.arm.model.AccountSearchBySSNRequest;
-import com.amdexa.misc.arm.model.AccountSearchResp;
-import com.amdexa.misc.arm.model.Cloudapierror;
+import com.amdexa.misc.arm.model.*;
+import com.amdexa.misc.arm.model.APIError;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,11 +19,11 @@ public interface AccountApi {
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = AccountSearchResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/account/searchbyaccountnumber",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -40,11 +36,11 @@ public interface AccountApi {
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = AccountSearchResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/account/searchbyname",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -57,11 +53,11 @@ public interface AccountApi {
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = AccountSearchResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/account/searchbyphone",
         produces = { "application/json" }, 
         consumes = { "application/json" },
@@ -74,11 +70,11 @@ public interface AccountApi {
     }, tags={ "Account Search API", })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful Request", response = AccountSearchResp.class),
-        @ApiResponse(code = 400, message = "Bad Request Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 403, message = "Forbidden Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 404, message = "Not Found Status Code", response = Cloudapierror.class),
-        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = Cloudapierror.class) })
+        @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
+        @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
+        @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
+        @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
+        @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
     @RequestMapping(value = "/account/searchbyssn",
         produces = { "application/json" }, 
         consumes = { "application/json" },

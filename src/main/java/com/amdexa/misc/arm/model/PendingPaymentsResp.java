@@ -18,31 +18,31 @@ import javax.validation.Valid;
 
 
 public class PendingPaymentsResp   {
-  @JsonProperty("XCloudCorrelationID")
-  private String xcloudCorrelationID = null;
+  @JsonProperty("correlationID")
+  private String correlationID = null;
 
   @JsonProperty("PendingPaymentsSet")
   @Valid
   private List<PendingPaymentsRespPendingPaymentsSet> pendingPaymentsSet = null;
 
-  public PendingPaymentsResp xcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public PendingPaymentsResp correlationID(String correlationID) {
+    this.correlationID = correlationID;
     return this;
   }
 
   /**
    * The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.
-   * @return xcloudCorrelationID
+   * @return correlationID
   **/
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
   public String getXcloudCorrelationID() {
-    return xcloudCorrelationID;
+    return correlationID;
   }
 
-  public void setXcloudCorrelationID(String xcloudCorrelationID) {
-    this.xcloudCorrelationID = xcloudCorrelationID;
+  public void setXcloudCorrelationID(String correlationID) {
+    this.correlationID = correlationID;
   }
 
   public PendingPaymentsResp pendingPaymentsSet(List<PendingPaymentsRespPendingPaymentsSet> pendingPaymentsSet) {
@@ -84,13 +84,13 @@ public class PendingPaymentsResp   {
       return false;
     }
     PendingPaymentsResp pendingPaymentsResp = (PendingPaymentsResp) o;
-    return Objects.equals(this.xcloudCorrelationID, pendingPaymentsResp.xcloudCorrelationID) &&
+    return Objects.equals(this.correlationID, pendingPaymentsResp.correlationID) &&
         Objects.equals(this.pendingPaymentsSet, pendingPaymentsResp.pendingPaymentsSet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(xcloudCorrelationID, pendingPaymentsSet);
+    return Objects.hash(correlationID, pendingPaymentsSet);
   }
 
   @Override
@@ -98,7 +98,7 @@ public class PendingPaymentsResp   {
     StringBuilder sb = new StringBuilder();
     sb.append("class PendingPaymentsResp {\n");
     
-    sb.append("    xcloudCorrelationID: ").append(toIndentedString(xcloudCorrelationID)).append("\n");
+    sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
     sb.append("    pendingPaymentsSet: ").append(toIndentedString(pendingPaymentsSet)).append("\n");
     sb.append("}");
     return sb.toString();
