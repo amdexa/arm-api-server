@@ -15,7 +15,7 @@ import javax.validation.Valid;
 
 
 @Api(value = "process", description = "the process API")
-public interface ProcessApi {
+public interface ProcessAPI {
 
     @ApiOperation(value = "", nickname = "processAttorneyPost", notes = "Used to add an Attorney information", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")

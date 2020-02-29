@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Api(value = "demographic", description = "the demographic API")
-public interface DemographicApi {
+public interface DemographicAPI {
 
     @ApiOperation(value = "", nickname = "demographicAddressConsumerIdDelete", notes = "Used to delete the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")

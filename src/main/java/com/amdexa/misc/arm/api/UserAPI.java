@@ -18,7 +18,7 @@ import javax.validation.Valid;
 
 
 @Api(value = "user", description = "the user API")
-public interface UserApi {
+public interface UserAPI {
 
     @ApiOperation(value = "", nickname = "userCheckloginresponseRequestIdPost", notes = "Verify the login response", response = Loginresponse.class, authorizations = {
         @Authorization(value = "api_key")

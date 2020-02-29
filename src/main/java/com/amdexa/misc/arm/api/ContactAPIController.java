@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,16 +20,16 @@ import java.io.IOException;
 
 
 @Controller
-public class ContactApiController implements ContactApi {
+public class ContactAPIController implements ContactAPI {
 
-    private static final Logger log = LoggerFactory.getLogger(ContactApiController.class);
+    private static final Logger log = LoggerFactory.getLogger(ContactAPIController.class);
 
     private final ObjectMapper objectMapper;
 
     private final HttpServletRequest request;
 
-    @org.springframework.beans.factory.annotation.Autowired
-    public ContactApiController(ObjectMapper objectMapper, HttpServletRequest request) {
+    @Autowired
+    public ContactAPIController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
         this.request = request;
     }

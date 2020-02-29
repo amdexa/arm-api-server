@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Api(value = "contact", description = "the contact API")
-public interface ContactApi {
+public interface ContactAPI {
 
 
     @ApiOperation(value = "", nickname = "paymentReceipt", notes = "Used to send an email receipt to the consumer", response = GeneralSuccessResp.class, authorizations = {

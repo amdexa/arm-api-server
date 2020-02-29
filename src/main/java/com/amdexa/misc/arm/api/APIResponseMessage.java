@@ -1,9 +1,10 @@
 package com.amdexa.misc.arm.api;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
-@javax.xml.bind.annotation.XmlRootElement
-public class ApiResponseMessage {
+@XmlRootElement
+public class APIResponseMessage {
     public static final int ERROR = 1;
     public static final int WARNING = 2;
     public static final int INFO = 3;
@@ -14,9 +15,9 @@ public class ApiResponseMessage {
     String type;
     String message;
 
-    public ApiResponseMessage(){}
+    public APIResponseMessage(){}
 
-    public ApiResponseMessage(int code, String message){
+    public APIResponseMessage(int code, String message){
         this.code = code;
         switch(code){
         case ERROR:

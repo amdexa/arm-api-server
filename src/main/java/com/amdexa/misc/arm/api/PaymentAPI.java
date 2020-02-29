@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 @Api(value = "payment", description = "the payment API")
-public interface PaymentApi {
+public interface PaymentAPI {
 
     @ApiOperation(value = "", nickname = "paymentArrangedConsumerIdDelete", notes = "Used to delete a previously created pre-arranged payment", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")

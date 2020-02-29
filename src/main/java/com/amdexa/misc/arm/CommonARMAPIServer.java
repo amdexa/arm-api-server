@@ -17,6 +17,7 @@
  */
 package com.amdexa.misc.arm;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -29,7 +30,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class CommonARMAPIServer {
 
     public static void main(String[] args) {
-        new SpringApplication(CommonARMAPIServer.class).run(args);
+        SpringApplication application = new SpringApplication(CommonARMAPIServer.class);
+        application.setBannerMode(Banner.Mode.OFF);
+        application.run(args);
     }
 
 }

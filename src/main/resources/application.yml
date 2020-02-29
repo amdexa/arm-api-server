@@ -1,0 +1,17 @@
+management:
+    info:
+        git:
+            mode: full
+server:
+    contextPath: /v1
+    port: 8080
+spring:
+    jackson:
+        date-format: com.amdexa.misc.arm.RFC3339DateFormat
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+springfox:
+    documentation:
+        swagger:
+            v2:
+                path: /api-docs

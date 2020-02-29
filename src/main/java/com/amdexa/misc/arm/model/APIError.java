@@ -7,7 +7,7 @@ import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
 /**
- * Cloud API Error Response Object
+ * API Error Response Object
  */
 @ApiModel(description = "API Error Response Object")
 @Validated
