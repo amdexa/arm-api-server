@@ -34,7 +34,7 @@ public class UserAPIController implements UserAPI {
         this.request = request;
     }
 
-    public ResponseEntity<Loginresponse> userCheckloginresponseRequestIdPost(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "The Request ID returned",required=true) @PathVariable("requestId") String requestId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Empty empty,@ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId) {
+    public ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Request ID returned",required=true) @PathVariable("requestId") String requestId, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Empty empty, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -48,12 +48,12 @@ public class UserAPIController implements UserAPI {
         return new ResponseEntity<Loginresponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> userCheckresponseRequestIdPost(@ApiParam(value = "Request Header of the username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login. Required" ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Request ID returned.",required=true) @PathVariable("requestId") String requestId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody Empty empty) {
+    public ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login. Required" ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Request ID returned.",required=true) @PathVariable("requestId") String requestId, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Empty empty) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Loginresponse> userLoginPost(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "The Login Request Body is a JSON object with the following properties:" ,required=true )  @Valid @RequestBody Loginrequest loginrequest,@ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId) {
+    public ResponseEntity<Loginresponse> login(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Login Request Body is a JSON object with the following properties:" ,required=true )  @Valid @RequestBody Loginrequest loginrequest, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
