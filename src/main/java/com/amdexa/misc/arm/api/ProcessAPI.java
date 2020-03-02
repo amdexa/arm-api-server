@@ -17,7 +17,7 @@ import javax.validation.Valid;
 @Api(value = "process", description = "the process API")
 public interface ProcessAPI {
 
-    @ApiOperation(value = "", nickname = "processAttorneyPost", notes = "Used to add an Attorney information", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processAttorney", notes = "Used to add an Attorney information", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -31,10 +31,10 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processAttorneyPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The attorney endpoint request body is a JSON Object following the attorneyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody AttorneyRequest attorneyRequest);
+    ResponseEntity<GeneralSuccessResp> processAttorney(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The attorney endpoint request body is a JSON Object following the attorneyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody AttorneyRequest attorneyRequest);
 
 
-    @ApiOperation(value = "", nickname = "processBankruptcyPost", notes = "Used to post bankruptcy status", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processBankruptcy", notes = "Used to post bankruptcy status", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -48,10 +48,10 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processBankruptcyPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The bankruptcy endpoint request body is a JSON Object following the bankruptcyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody BankruptcyRequest bankruptcyRequest);
+    ResponseEntity<GeneralSuccessResp> processBankruptcy(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The bankruptcy endpoint request body is a JSON Object following the bankruptcyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody BankruptcyRequest bankruptcyRequest);
 
 
-    @ApiOperation(value = "", nickname = "processCeasePost", notes = "Used to mark account as cease and desist", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processCease", notes = "Used to mark account as cease and desist", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -65,10 +65,10 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processCeasePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The cease and desist endpoint request body is a JSON Object following the ceaseAndDesistRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody CeaseRequest ceaseRequest);
+    ResponseEntity<GeneralSuccessResp> processCease(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The cease and desist endpoint request body is a JSON Object following the ceaseAndDesistRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody CeaseRequest ceaseRequest);
 
 
-    @ApiOperation(value = "", nickname = "processDeceasedPost", notes = "Used to add a deceased record", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processDeceased", notes = "Used to add a deceased record", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -82,10 +82,10 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processDeceasedPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The deceased endpoint request body is a JSON Object following the deceasedRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeceasedRequest deceasedRequest);
+    ResponseEntity<GeneralSuccessResp> processDeceased(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The deceased endpoint request body is a JSON Object following the deceasedRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeceasedRequest deceasedRequest);
 
 
-    @ApiOperation(value = "", nickname = "processDisputePost", notes = "Used to create disputes on consumer accounts", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processDispute", notes = "Used to create disputes on consumer accounts", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -99,10 +99,10 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processDisputePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The dispute endpoint request body is a JSON Object following the disputeRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DisputeRequest disputeRequest);
+    ResponseEntity<GeneralSuccessResp> processDispute(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The dispute endpoint request body is a JSON Object following the disputeRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DisputeRequest disputeRequest);
 
 
-    @ApiOperation(value = "", nickname = "processInsurancePost", notes = "Used to add insurance information", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "processInsurance", notes = "Used to add insurance information", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Business Processes", })
     @ApiResponses(value = { 
@@ -116,6 +116,6 @@ public interface ProcessAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> processInsurancePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The insurance endpoint request body is a JSON Object following the insuranceRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody InsuranceRequest insuranceRequest);
+    ResponseEntity<GeneralSuccessResp> processInsurance(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The insurance endpoint request body is a JSON Object following the insuranceRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody InsuranceRequest insuranceRequest);
 
 }
