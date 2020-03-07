@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-@Api(value = "demographic", description = "the demographic API")
+@Api(value = "demographic", description = "The demographic API", tags = "Demographics API")
 public interface DemographicAPI {
 
     @ApiOperation(value = "", nickname = "deleteAddress", notes = "Used to delete the address for a consumer", response = GeneralSuccessResp.class, authorizations = {

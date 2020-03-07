@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-@Api(value = "account", description = "the account API")
+@Api(value = "account", description = "The account API", tags = "Account Search API")
 public interface AccountAPI {
 
     @ApiOperation(value = "", nickname = "searchByAccountNumber", notes = "Used to search for accounts by account number", response = AccountSearchResp.class, authorizations = {

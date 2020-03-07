@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.validation.Valid;
 
 
-@Api(value = "user", description = "the user API")
+@Api(value = "user", description = "The user API", tags = "User API")
 public interface UserAPI {
 
     @ApiOperation(value = "", nickname = "checkLoginResponse", notes = "Verify the login response", response = Loginresponse.class, authorizations = {

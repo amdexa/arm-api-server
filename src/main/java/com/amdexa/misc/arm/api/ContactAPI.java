@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-@Api(value = "contact", description = "the contact API")
+@Api(value = "contact", description = "The contact API", tags = "Contact API")
 public interface ContactAPI {
 
 
