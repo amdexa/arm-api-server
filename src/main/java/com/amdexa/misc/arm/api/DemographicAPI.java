@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Api(value = "demographic", description = "the demographic API")
 public interface DemographicAPI {
 
-    @ApiOperation(value = "", nickname = "demographicAddressConsumerIdDelete", notes = "Used to delete the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "deleteAddress", notes = "Used to delete the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -29,10 +29,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> demographicAddressConsumerIdDelete(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The delete address endpoint request body is a JSON Object following the delete address schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeleteAddressRequest deleteAddressRequest);
+    ResponseEntity<GeneralSuccessResp> deleteAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete address endpoint request body is a JSON Object following the delete address schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeleteAddressRequest deleteAddressRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicAddressConsumerIdGet", notes = "Used to retrieve the address for a consumer", response = AddressResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "getAddress", notes = "Used to retrieve the address for a consumer", response = AddressResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -46,10 +46,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<AddressResponse> demographicAddressConsumerIdGet(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The get address endpoint request body is a JSON Object following the addressRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody AddressRequest addressRequest);
+    ResponseEntity<AddressResponse> getAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The get address endpoint request body is a JSON Object following the addressRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody AddressRequest addressRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicAddressConsumerIdPut", notes = "Used to update the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "updateAddress", notes = "Used to update the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -63,10 +63,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> demographicAddressConsumerIdPut(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The update address request body is a JSON Object following the below properties.  Blank values will be treated as no change." ,required=true )  @Valid @RequestBody UpdateAddressRequest updateAddressRequest);
+    ResponseEntity<GeneralSuccessResp> updateAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The update address request body is a JSON Object following the below properties.  Blank values will be treated as no change." ,required=true )  @Valid @RequestBody UpdateAddressRequest updateAddressRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicEmailaddressConsumerIdDelete", notes = "Used to delete the email address for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "deleteEmailAddress", notes = "Used to delete the email address for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -80,10 +80,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> demographicEmailaddressConsumerIdDelete(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The delete email address endpoint request body is a JSON Object following the delete email address schema." ,required=true )  @Valid @RequestBody DeleteEmailRequest deleteEmailRequest);
+    ResponseEntity<GeneralSuccessResp> deleteEmailAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete email address endpoint request body is a JSON Object following the delete email address schema." ,required=true )  @Valid @RequestBody DeleteEmailRequest deleteEmailRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicEmailaddressConsumerIdPut", notes = "Used to update the email address for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "updateEmailAddress", notes = "Used to update the email address for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -97,10 +97,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> demographicEmailaddressConsumerIdPut(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Update Email Address endpoint request body is a JSON Object following the updateEmailRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateEmailRequest updateEmailRequest);
+    ResponseEntity<GeneralSuccessResp> updateEmailAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Update Email Address endpoint request body is a JSON Object following the updateEmailRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateEmailRequest updateEmailRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicFinancialprofileConsumerIdGet", notes = "Used to get the financial profile the consumer", response = FinancialProfileResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "getFinancialProfile", notes = "Used to get the financial profile the consumer", response = FinancialProfileResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -114,10 +114,10 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<FinancialProfileResponse> demographicFinancialprofileConsumerIdGet(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The get financial profile endpoint request body is a JSON Object following the financialProfileRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody FinancialProfileRequest financialProfileRequest);
+    ResponseEntity<FinancialProfileResponse> getFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The get financial profile endpoint request body is a JSON Object following the financialProfileRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody FinancialProfileRequest financialProfileRequest);
 
 
-    @ApiOperation(value = "", nickname = "demographicFinancialprofileConsumerIdPut", notes = "Used to update the financial profile the consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "updateFinancialProfile", notes = "Used to update the financial profile the consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
@@ -131,7 +131,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> demographicFinancialprofileConsumerIdPut(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The Update financial profile endpoint request body is a JSON Object following the updateFinancialProfileRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateFinancialProfileRequest updateFinancialProfileRequest);
+    ResponseEntity<GeneralSuccessResp> updateFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Update financial profile endpoint request body is a JSON Object following the updateFinancialProfileRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateFinancialProfileRequest updateFinancialProfileRequest);
 
 
     @ApiOperation(value = "", nickname = "demographicMaritalstatusConsumerIdGet", notes = "Used to get the marital status for the consumer", response = MaritalStatusResponse.class, authorizations = {
