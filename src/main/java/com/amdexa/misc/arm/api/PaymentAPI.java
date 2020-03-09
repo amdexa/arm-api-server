@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Api(value = "payment", description = "The payment API", tags = "Payments API")
 public interface PaymentAPI {
 
-    @ApiOperation(value = "", nickname = "paymentArrangedConsumerIdDelete", notes = "Used to delete a previously created pre-arranged payment", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "deletePaymentArranged", notes = "Used to delete a previously created pre-arranged payment", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -29,10 +29,10 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> paymentArrangedConsumerIdDelete(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The delete PA payment endpoint request body is a JSON Object following the deletePAPaymentRequest schema." ,required=true )  @Valid @RequestBody DeletePAPaymentRequest deletePAPaymentRequest);
+    ResponseEntity<GeneralSuccessResp> deletePaymentArranged(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete PA payment endpoint request body is a JSON Object following the deletePAPaymentRequest schema." ,required=true )  @Valid @RequestBody DeletePAPaymentRequest deletePAPaymentRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentArrangedConsumerIdPut", notes = "Used to update a previously created arranged payment", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "updatePaymentArranged", notes = "Used to update a previously created arranged payment", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -46,10 +46,10 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> paymentArrangedConsumerIdPut(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The update PA payment endpoint request body is a JSON Object following the updatePAPaymentRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdatePAPaymentRequest updatePAPaymentRequest);
+    ResponseEntity<GeneralSuccessResp> updatePaymentArranged(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The update PA payment endpoint request body is a JSON Object following the updatePAPaymentRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdatePAPaymentRequest updatePAPaymentRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentArrangementConsumerIdDelete", notes = "Used to delete a payment arrangement for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "deletePaymentArrangement", notes = "Used to delete a payment arrangement for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -63,10 +63,10 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> paymentArrangementConsumerIdDelete(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The delete payment endpoint request body is a JSON Object following the deletePaymentArrangementRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeletePaymentArrangementRequest deletePaymentArrangementRequest);
+    ResponseEntity<GeneralSuccessResp> deletePaymentArrangement(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete payment endpoint request body is a JSON Object following the deletePaymentArrangementRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeletePaymentArrangementRequest deletePaymentArrangementRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentArrangementPost", notes = "Used to create a payment arrangement for a consumer", response = GeneralSuccessResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "addPaymentArrangement", notes = "Used to create a payment arrangement for a consumer", response = GeneralSuccessResp.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -80,7 +80,7 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> paymentArrangementPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The post payment arrangement endpoint request body is a JSON Object following the createPaymentArrangementRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody CreatePaymentArrangementRequest createPaymentArrangementRequest);
+    ResponseEntity<GeneralSuccessResp> addPaymentArrangement(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The post payment arrangement endpoint request body is a JSON Object following the createPaymentArrangementRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody CreatePaymentArrangementRequest createPaymentArrangementRequest);
 
 
     @ApiOperation(value = "", nickname = "paymentCardtypecalcPost", notes = "Used to determine if the type of card is credit or debit, based on the card number.", response = CardTypeCalcResponse.class, authorizations = {
