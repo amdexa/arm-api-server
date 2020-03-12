@@ -202,7 +202,7 @@ public interface PaymentAPI {
     ResponseEntity<ImmedPaymentCCResp> createPaymentImmediateCard(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Immediate Payment with CC endpoint request body is a JSON Object following the immedPaymentCCRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody ImmedPaymentCCRequest immedPaymentCCRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentImmediatewithtokenPost", notes = "Used to make an immediate payment using a pre-assigned token", response = ImmediatePaymentTokenResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "createImmediatePaymentWithToken", notes = "Used to make an immediate payment using a pre-assigned token", response = ImmediatePaymentTokenResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -216,7 +216,7 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<ImmediatePaymentTokenResponse> paymentImmediatewithtokenPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The immediate payment with token endpoint request body is a JSON Object follows the immediatePaymentWithTokenRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody ImmediatePaymentWithTokenRequest immediatePaymentWithTokenRequest);
+    ResponseEntity<ImmediatePaymentTokenResponse> createImmediatePaymentWithToken(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The immediate payment with token endpoint request body is a JSON Object follows the immediatePaymentWithTokenRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody ImmediatePaymentWithTokenRequest immediatePaymentWithTokenRequest);
 
 
     @ApiOperation(value = "", nickname = "getPaymentPending", notes = "Used to get the pending payments for a consumer", response = PendingPaymentsResp.class, authorizations = {
