@@ -270,7 +270,7 @@ public interface PaymentAPI {
     ResponseEntity<GeneralSuccessResp> paymentSchedulePost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The paSchedule endpoint request body is a JSON Object follows the paScheduleRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody ScheduleRequest paScheduleRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentTokenizemethodachPost", notes = "Used to create a tokenized version of an ACH payment", response = TokenizePaymentACHResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "createPaymentTokenizeMethodACH", notes = "Used to create a tokenized version of an ACH payment", response = TokenizePaymentACHResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -284,10 +284,10 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<TokenizePaymentACHResponse> paymentTokenizemethodachPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "The post tokenize ACH payment endpoint request body is a JSON Object following the tokenizePaymentACHRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody TokenizePaymentACHRequest tokenizePaymentACHRequest);
+    ResponseEntity<TokenizePaymentACHResponse> createPaymentTokenizeMethodACH(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The post tokenize ACH payment endpoint request body is a JSON Object following the tokenizePaymentACHRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody TokenizePaymentACHRequest tokenizePaymentACHRequest);
 
 
-    @ApiOperation(value = "", nickname = "paymentTokenizemethodccPost", notes = "Used to create a tokenized version of an ACH payment", response = TokenizePaymentMethodCCResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "createPaymentTokenizeMethodCC", notes = "Used to create a tokenized version of an ACH payment", response = TokenizePaymentMethodCCResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
@@ -301,6 +301,6 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<TokenizePaymentMethodCCResponse> paymentTokenizemethodccPost(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username,@ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId,@ApiParam(value = "" ,required=true )  @Valid @RequestBody TokenizePaymentMethodCCRequest tokenizePaymentMethodCCRequest);
+    ResponseEntity<TokenizePaymentMethodCCResponse> createPaymentTokenizeMethodCC(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "" ,required=true )  @Valid @RequestBody TokenizePaymentMethodCCRequest tokenizePaymentMethodCCRequest);
 
 }
