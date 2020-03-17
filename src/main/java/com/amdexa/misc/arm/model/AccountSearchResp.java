@@ -37,11 +37,11 @@ public class AccountSearchResp   {
   @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
 
 
-  public String getXcloudCorrelationID() {
+  public String getCorrelationID() {
     return correlationID;
   }
 
-  public void setXcloudCorrelationID(String correlationID) {
+  public void setCorrelationID(String correlationID) {
     this.correlationID = correlationID;
   }
 
