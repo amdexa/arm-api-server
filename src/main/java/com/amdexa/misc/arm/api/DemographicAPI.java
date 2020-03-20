@@ -76,11 +76,11 @@ public interface DemographicAPI {
         @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
         @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
         @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
-    @RequestMapping(value = "/demographic/emailaddress/{consumerId}",
+    @RequestMapping(value = "/demographic/email/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> deleteEmailAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete email address endpoint request body is a JSON Object following the delete email address schema." ,required=true )  @Valid @RequestBody DeleteEmailRequest deleteEmailRequest);
+    ResponseEntity<GeneralSuccessResp> deleteEmail(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The delete email address endpoint request body is a JSON Object following the delete email address schema." ,required=true )  @Valid @RequestBody DeleteEmailRequest deleteEmailRequest);
 
 
     @ApiOperation(value = "", nickname = "updateEmailAddress", notes = "Used to update the email address for a consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -93,11 +93,11 @@ public interface DemographicAPI {
         @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
         @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
         @ApiResponse(code = 500, message = "Internal Server Error Status Code", response = APIError.class) })
-    @RequestMapping(value = "/demographic/emailaddress/{consumerId}",
+    @RequestMapping(value = "/demographic/email/{consumerId}",
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> updateEmailAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Update Email Address endpoint request body is a JSON Object following the updateEmailRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateEmailRequest updateEmailRequest);
+    ResponseEntity<GeneralSuccessResp> updateEmail(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The Update Email Address endpoint request body is a JSON Object following the updateEmailRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody UpdateEmailRequest updateEmailRequest);
 
 
     @ApiOperation(value = "", nickname = "getFinancialProfile", notes = "Used to get the financial profile the consumer", response = FinancialProfileResponse.class, authorizations = {
