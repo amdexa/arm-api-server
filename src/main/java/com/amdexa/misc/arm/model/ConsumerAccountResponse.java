@@ -11,7 +11,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 
 
-public class AccountSearchRespAccounts   {
+public class ConsumerAccountResponse {
   @JsonProperty("AccountNumber")
   private String accountNumber = null;
 
@@ -33,7 +33,7 @@ public class AccountSearchRespAccounts   {
   @JsonProperty("AttorneyPhone")
   private String attorneyPhone = null;
 
-  public AccountSearchRespAccounts accountNumber(String accountNumber) {
+  public ConsumerAccountResponse accountNumber(String accountNumber) {
     this.accountNumber = accountNumber;
     return this;
   }
@@ -53,7 +53,7 @@ public class AccountSearchRespAccounts   {
     this.accountNumber = accountNumber;
   }
 
-  public AccountSearchRespAccounts clientName(String clientName) {
+  public ConsumerAccountResponse clientName(String clientName) {
     this.clientName = clientName;
     return this;
   }
@@ -73,7 +73,7 @@ public class AccountSearchRespAccounts   {
     this.clientName = clientName;
   }
 
-  public AccountSearchRespAccounts listDate(String listDate) {
+  public ConsumerAccountResponse listDate(String listDate) {
     this.listDate = listDate;
     return this;
   }
@@ -93,7 +93,7 @@ public class AccountSearchRespAccounts   {
     this.listDate = listDate;
   }
 
-  public AccountSearchRespAccounts comakerFirstName(String comakerFirstName) {
+  public ConsumerAccountResponse comakerFirstName(String comakerFirstName) {
     this.comakerFirstName = comakerFirstName;
     return this;
   }
@@ -113,7 +113,7 @@ public class AccountSearchRespAccounts   {
     this.comakerFirstName = comakerFirstName;
   }
 
-  public AccountSearchRespAccounts comakerLastName(String comakerLastName) {
+  public ConsumerAccountResponse comakerLastName(String comakerLastName) {
     this.comakerLastName = comakerLastName;
     return this;
   }
@@ -133,7 +133,7 @@ public class AccountSearchRespAccounts   {
     this.comakerLastName = comakerLastName;
   }
 
-  public AccountSearchRespAccounts attorneyName(String attorneyName) {
+  public ConsumerAccountResponse attorneyName(String attorneyName) {
     this.attorneyName = attorneyName;
     return this;
   }
@@ -153,7 +153,7 @@ public class AccountSearchRespAccounts   {
     this.attorneyName = attorneyName;
   }
 
-  public AccountSearchRespAccounts attorneyPhone(String attorneyPhone) {
+  public ConsumerAccountResponse attorneyPhone(String attorneyPhone) {
     this.attorneyPhone = attorneyPhone;
     return this;
   }
@@ -182,14 +182,14 @@ public class AccountSearchRespAccounts   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountSearchRespAccounts accountSearchRespAccounts = (AccountSearchRespAccounts) o;
-    return Objects.equals(this.accountNumber, accountSearchRespAccounts.accountNumber) &&
-        Objects.equals(this.clientName, accountSearchRespAccounts.clientName) &&
-        Objects.equals(this.listDate, accountSearchRespAccounts.listDate) &&
-        Objects.equals(this.comakerFirstName, accountSearchRespAccounts.comakerFirstName) &&
-        Objects.equals(this.comakerLastName, accountSearchRespAccounts.comakerLastName) &&
-        Objects.equals(this.attorneyName, accountSearchRespAccounts.attorneyName) &&
-        Objects.equals(this.attorneyPhone, accountSearchRespAccounts.attorneyPhone);
+    ConsumerAccountResponse consumerAccountResponse = (ConsumerAccountResponse) o;
+    return Objects.equals(this.accountNumber, consumerAccountResponse.accountNumber) &&
+        Objects.equals(this.clientName, consumerAccountResponse.clientName) &&
+        Objects.equals(this.listDate, consumerAccountResponse.listDate) &&
+        Objects.equals(this.comakerFirstName, consumerAccountResponse.comakerFirstName) &&
+        Objects.equals(this.comakerLastName, consumerAccountResponse.comakerLastName) &&
+        Objects.equals(this.attorneyName, consumerAccountResponse.attorneyName) &&
+        Objects.equals(this.attorneyPhone, consumerAccountResponse.attorneyPhone);
   }
 
   @Override

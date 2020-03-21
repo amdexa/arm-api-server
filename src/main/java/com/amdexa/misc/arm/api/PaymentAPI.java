@@ -80,7 +80,7 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> createPaymentArrangement(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The post payment arrangement endpoint request body is a JSON Object following the createPaymentArrangementRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody CreatePaymentArrangementRequest createPaymentArrangementRequest);
+    ResponseEntity<GeneralSuccessResp> createPaymentArrangement(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The post payment arrangement endpoint request body is a JSON Object following the createPaymentArrangementRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody PaymentArrangementRequest paymentArrangementRequest);
 
 
     @ApiOperation(value = "", nickname = "paymentCardTypeCalc", notes = "Used to determine if the type of card is credit or debit, based on the card number.", response = CardTypeCalcResponse.class, authorizations = {
@@ -250,7 +250,7 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<GeneralSuccessResp> createPayment(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The create payment endpoint request body is a JSON Object following the createSinglePaymentRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody CreateSinglePaymentRequest createSinglePaymentRequest);
+    ResponseEntity<GeneralSuccessResp> createPayment(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The create payment endpoint request body is a JSON Object following the createSinglePaymentRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody SinglePaymentRequest singlePaymentRequest);
 
 
     @ApiOperation(value = "", nickname = "paymentSchedulePost", notes = "Used to create a schedule for an arranged payment", response = GeneralSuccessResp.class, authorizations = {

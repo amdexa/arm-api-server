@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 @Validated
 
 
-public class CreatePaymentArrangementRequest   {
+public class PaymentArrangementRequest {
   @JsonProperty("consumerId")
   private String consumerId = null;
 
@@ -49,7 +49,7 @@ public class CreatePaymentArrangementRequest   {
   @JsonProperty("Consent")
   private String consent = null;
 
-  public CreatePaymentArrangementRequest consumerId(String consumerId) {
+  public PaymentArrangementRequest consumerId(String consumerId) {
     this.consumerId = consumerId;
     return this;
   }
@@ -70,7 +70,7 @@ public class CreatePaymentArrangementRequest   {
     this.consumerId = consumerId;
   }
 
-  public CreatePaymentArrangementRequest scheduleId(String scheduleId) {
+  public PaymentArrangementRequest scheduleId(String scheduleId) {
     this.scheduleId = scheduleId;
     return this;
   }
@@ -91,7 +91,7 @@ public class CreatePaymentArrangementRequest   {
     this.scheduleId = scheduleId;
   }
 
-  public CreatePaymentArrangementRequest psInstrumentId(String psInstrumentId) {
+  public PaymentArrangementRequest psInstrumentId(String psInstrumentId) {
     this.psInstrumentId = psInstrumentId;
     return this;
   }
@@ -112,7 +112,7 @@ public class CreatePaymentArrangementRequest   {
     this.psInstrumentId = psInstrumentId;
   }
 
-  public CreatePaymentArrangementRequest psToken(String psToken) {
+  public PaymentArrangementRequest psToken(String psToken) {
     this.psToken = psToken;
     return this;
   }
@@ -133,7 +133,7 @@ public class CreatePaymentArrangementRequest   {
     this.psToken = psToken;
   }
 
-  public CreatePaymentArrangementRequest downPaymentPSHistoryId(String downPaymentPSHistoryId) {
+  public PaymentArrangementRequest downPaymentPSHistoryId(String downPaymentPSHistoryId) {
     this.downPaymentPSHistoryId = downPaymentPSHistoryId;
     return this;
   }
@@ -154,7 +154,7 @@ public class CreatePaymentArrangementRequest   {
     this.downPaymentPSHistoryId = downPaymentPSHistoryId;
   }
 
-  public CreatePaymentArrangementRequest downPaymentPSCorrelationId(String downPaymentPSCorrelationId) {
+  public PaymentArrangementRequest downPaymentPSCorrelationId(String downPaymentPSCorrelationId) {
     this.downPaymentPSCorrelationId = downPaymentPSCorrelationId;
     return this;
   }
@@ -175,7 +175,7 @@ public class CreatePaymentArrangementRequest   {
     this.downPaymentPSCorrelationId = downPaymentPSCorrelationId;
   }
 
-  public CreatePaymentArrangementRequest downPaymentReference(String downPaymentReference) {
+  public PaymentArrangementRequest downPaymentReference(String downPaymentReference) {
     this.downPaymentReference = downPaymentReference;
     return this;
   }
@@ -196,7 +196,7 @@ public class CreatePaymentArrangementRequest   {
     this.downPaymentReference = downPaymentReference;
   }
 
-  public CreatePaymentArrangementRequest downPaymentFeeAmount(String downPaymentFeeAmount) {
+  public PaymentArrangementRequest downPaymentFeeAmount(String downPaymentFeeAmount) {
     this.downPaymentFeeAmount = downPaymentFeeAmount;
     return this;
   }
@@ -217,7 +217,7 @@ public class CreatePaymentArrangementRequest   {
     this.downPaymentFeeAmount = downPaymentFeeAmount;
   }
 
-  public CreatePaymentArrangementRequest signature(String signature) {
+  public PaymentArrangementRequest signature(String signature) {
     this.signature = signature;
     return this;
   }
@@ -238,7 +238,7 @@ public class CreatePaymentArrangementRequest   {
     this.signature = signature;
   }
 
-  public CreatePaymentArrangementRequest acHTransactionType(String acHTransactionType) {
+  public PaymentArrangementRequest acHTransactionType(String acHTransactionType) {
     this.acHTransactionType = acHTransactionType;
     return this;
   }
@@ -258,7 +258,7 @@ public class CreatePaymentArrangementRequest   {
     this.acHTransactionType = acHTransactionType;
   }
 
-  public CreatePaymentArrangementRequest consent(String consent) {
+  public PaymentArrangementRequest consent(String consent) {
     this.consent = consent;
     return this;
   }
@@ -287,18 +287,18 @@ public class CreatePaymentArrangementRequest   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreatePaymentArrangementRequest createPaymentArrangementRequest = (CreatePaymentArrangementRequest) o;
-    return Objects.equals(this.consumerId, createPaymentArrangementRequest.consumerId) &&
-        Objects.equals(this.scheduleId, createPaymentArrangementRequest.scheduleId) &&
-        Objects.equals(this.psInstrumentId, createPaymentArrangementRequest.psInstrumentId) &&
-        Objects.equals(this.psToken, createPaymentArrangementRequest.psToken) &&
-        Objects.equals(this.downPaymentPSHistoryId, createPaymentArrangementRequest.downPaymentPSHistoryId) &&
-        Objects.equals(this.downPaymentPSCorrelationId, createPaymentArrangementRequest.downPaymentPSCorrelationId) &&
-        Objects.equals(this.downPaymentReference, createPaymentArrangementRequest.downPaymentReference) &&
-        Objects.equals(this.downPaymentFeeAmount, createPaymentArrangementRequest.downPaymentFeeAmount) &&
-        Objects.equals(this.signature, createPaymentArrangementRequest.signature) &&
-        Objects.equals(this.acHTransactionType, createPaymentArrangementRequest.acHTransactionType) &&
-        Objects.equals(this.consent, createPaymentArrangementRequest.consent);
+    PaymentArrangementRequest paymentArrangementRequest = (PaymentArrangementRequest) o;
+    return Objects.equals(this.consumerId, paymentArrangementRequest.consumerId) &&
+        Objects.equals(this.scheduleId, paymentArrangementRequest.scheduleId) &&
+        Objects.equals(this.psInstrumentId, paymentArrangementRequest.psInstrumentId) &&
+        Objects.equals(this.psToken, paymentArrangementRequest.psToken) &&
+        Objects.equals(this.downPaymentPSHistoryId, paymentArrangementRequest.downPaymentPSHistoryId) &&
+        Objects.equals(this.downPaymentPSCorrelationId, paymentArrangementRequest.downPaymentPSCorrelationId) &&
+        Objects.equals(this.downPaymentReference, paymentArrangementRequest.downPaymentReference) &&
+        Objects.equals(this.downPaymentFeeAmount, paymentArrangementRequest.downPaymentFeeAmount) &&
+        Objects.equals(this.signature, paymentArrangementRequest.signature) &&
+        Objects.equals(this.acHTransactionType, paymentArrangementRequest.acHTransactionType) &&
+        Objects.equals(this.consent, paymentArrangementRequest.consent);
   }
 
   @Override

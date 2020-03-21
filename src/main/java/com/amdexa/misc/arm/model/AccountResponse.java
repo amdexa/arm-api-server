@@ -17,15 +17,15 @@ import javax.validation.Valid;
 @Validated
 
 
-public class AccountSearchResp   {
+public class AccountResponse {
   @JsonProperty("correlationID")
   private String correlationID = null;
 
   @JsonProperty("ConsumerAccountSets")
   @Valid
-  private List<AccountSearchRespConsumerAccountSets> consumerAccountSets = null;
+  private List<ConsumerResponse> consumerAccountSets = null;
 
-  public AccountSearchResp correlationID(String correlationID) {
+  public AccountResponse correlationID(String correlationID) {
     this.correlationID = correlationID;
     return this;
   }
@@ -45,14 +45,14 @@ public class AccountSearchResp   {
     this.correlationID = correlationID;
   }
 
-  public AccountSearchResp consumerAccountSets(List<AccountSearchRespConsumerAccountSets> consumerAccountSets) {
+  public AccountResponse consumerAccountSets(List<ConsumerResponse> consumerAccountSets) {
     this.consumerAccountSets = consumerAccountSets;
     return this;
   }
 
-  public AccountSearchResp addConsumerAccountSetsItem(AccountSearchRespConsumerAccountSets consumerAccountSetsItem) {
+  public AccountResponse addConsumerAccountSetsItem(ConsumerResponse consumerAccountSetsItem) {
     if (this.consumerAccountSets == null) {
-      this.consumerAccountSets = new ArrayList<AccountSearchRespConsumerAccountSets>();
+      this.consumerAccountSets = new ArrayList<ConsumerResponse>();
     }
     this.consumerAccountSets.add(consumerAccountSetsItem);
     return this;
@@ -66,11 +66,11 @@ public class AccountSearchResp   {
 
   @Valid
 
-  public List<AccountSearchRespConsumerAccountSets> getConsumerAccountSets() {
+  public List<ConsumerResponse> getConsumerAccountSets() {
     return consumerAccountSets;
   }
 
-  public void setConsumerAccountSets(List<AccountSearchRespConsumerAccountSets> consumerAccountSets) {
+  public void setConsumerAccountSets(List<ConsumerResponse> consumerAccountSets) {
     this.consumerAccountSets = consumerAccountSets;
   }
 
@@ -83,9 +83,9 @@ public class AccountSearchResp   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountSearchResp accountSearchResp = (AccountSearchResp) o;
-    return Objects.equals(this.correlationID, accountSearchResp.correlationID) &&
-        Objects.equals(this.consumerAccountSets, accountSearchResp.consumerAccountSets);
+    AccountResponse accountResponse = (AccountResponse) o;
+    return Objects.equals(this.correlationID, accountResponse.correlationID) &&
+        Objects.equals(this.consumerAccountSets, accountResponse.consumerAccountSets);
   }
 
   @Override

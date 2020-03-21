@@ -15,7 +15,7 @@ import javax.validation.constraints.*;
 @Validated
 
 
-public class CreateSinglePaymentRequest   {
+public class SinglePaymentRequest {
   @JsonProperty("consumerId")
   private String consumerId = null;
 
@@ -37,7 +37,7 @@ public class CreateSinglePaymentRequest   {
   @JsonProperty("ACHTransactionType")
   private String acHTransactionType = null;
 
-  public CreateSinglePaymentRequest consumerId(String consumerId) {
+  public SinglePaymentRequest consumerId(String consumerId) {
     this.consumerId = consumerId;
     return this;
   }
@@ -58,7 +58,7 @@ public class CreateSinglePaymentRequest   {
     this.consumerId = consumerId;
   }
 
-  public CreateSinglePaymentRequest paymentAmount(String paymentAmount) {
+  public SinglePaymentRequest paymentAmount(String paymentAmount) {
     this.paymentAmount = paymentAmount;
     return this;
   }
@@ -79,7 +79,7 @@ public class CreateSinglePaymentRequest   {
     this.paymentAmount = paymentAmount;
   }
 
-  public CreateSinglePaymentRequest paymentDate(String paymentDate) {
+  public SinglePaymentRequest paymentDate(String paymentDate) {
     this.paymentDate = paymentDate;
     return this;
   }
@@ -100,7 +100,7 @@ public class CreateSinglePaymentRequest   {
     this.paymentDate = paymentDate;
   }
 
-  public CreateSinglePaymentRequest psInstrumentId(String psInstrumentId) {
+  public SinglePaymentRequest psInstrumentId(String psInstrumentId) {
     this.psInstrumentId = psInstrumentId;
     return this;
   }
@@ -121,7 +121,7 @@ public class CreateSinglePaymentRequest   {
     this.psInstrumentId = psInstrumentId;
   }
 
-  public CreateSinglePaymentRequest psToken(String psToken) {
+  public SinglePaymentRequest psToken(String psToken) {
     this.psToken = psToken;
     return this;
   }
@@ -142,7 +142,7 @@ public class CreateSinglePaymentRequest   {
     this.psToken = psToken;
   }
 
-  public CreateSinglePaymentRequest isDirected(String isDirected) {
+  public SinglePaymentRequest isDirected(String isDirected) {
     this.isDirected = isDirected;
     return this;
   }
@@ -163,7 +163,7 @@ public class CreateSinglePaymentRequest   {
     this.isDirected = isDirected;
   }
 
-  public CreateSinglePaymentRequest acHTransactionType(String acHTransactionType) {
+  public SinglePaymentRequest acHTransactionType(String acHTransactionType) {
     this.acHTransactionType = acHTransactionType;
     return this;
   }
@@ -193,14 +193,14 @@ public class CreateSinglePaymentRequest   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateSinglePaymentRequest createSinglePaymentRequest = (CreateSinglePaymentRequest) o;
-    return Objects.equals(this.consumerId, createSinglePaymentRequest.consumerId) &&
-        Objects.equals(this.paymentAmount, createSinglePaymentRequest.paymentAmount) &&
-        Objects.equals(this.paymentDate, createSinglePaymentRequest.paymentDate) &&
-        Objects.equals(this.psInstrumentId, createSinglePaymentRequest.psInstrumentId) &&
-        Objects.equals(this.psToken, createSinglePaymentRequest.psToken) &&
-        Objects.equals(this.isDirected, createSinglePaymentRequest.isDirected) &&
-        Objects.equals(this.acHTransactionType, createSinglePaymentRequest.acHTransactionType);
+    SinglePaymentRequest singlePaymentRequest = (SinglePaymentRequest) o;
+    return Objects.equals(this.consumerId, singlePaymentRequest.consumerId) &&
+        Objects.equals(this.paymentAmount, singlePaymentRequest.paymentAmount) &&
+        Objects.equals(this.paymentDate, singlePaymentRequest.paymentDate) &&
+        Objects.equals(this.psInstrumentId, singlePaymentRequest.psInstrumentId) &&
+        Objects.equals(this.psToken, singlePaymentRequest.psToken) &&
+        Objects.equals(this.isDirected, singlePaymentRequest.isDirected) &&
+        Objects.equals(this.acHTransactionType, singlePaymentRequest.acHTransactionType);
   }
 
   @Override

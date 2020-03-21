@@ -15,7 +15,7 @@ import javax.validation.Valid;
 @Validated
 
 
-public class AccountSearchRespConsumerAccountSets   {
+public class ConsumerResponse {
   @JsonProperty("consumerId")
   private String consumerId = null;
 
@@ -102,9 +102,9 @@ public class AccountSearchRespConsumerAccountSets   {
 
   @JsonProperty("Accounts")
   @Valid
-  private List<AccountSearchRespAccounts> accounts = null;
+  private List<ConsumerAccountResponse> accounts = null;
 
-  public AccountSearchRespConsumerAccountSets consumerId(String consumerId) {
+  public ConsumerResponse consumerId(String consumerId) {
     this.consumerId = consumerId;
     return this;
   }
@@ -124,7 +124,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.consumerId = consumerId;
   }
 
-  public AccountSearchRespConsumerAccountSets status(String status) {
+  public ConsumerResponse status(String status) {
     this.status = status;
     return this;
   }
@@ -144,7 +144,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.status = status;
   }
 
-  public AccountSearchRespConsumerAccountSets balance(String balance) {
+  public ConsumerResponse balance(String balance) {
     this.balance = balance;
     return this;
   }
@@ -164,7 +164,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.balance = balance;
   }
 
-  public AccountSearchRespConsumerAccountSets lastCall(String lastCall) {
+  public ConsumerResponse lastCall(String lastCall) {
     this.lastCall = lastCall;
     return this;
   }
@@ -184,7 +184,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.lastCall = lastCall;
   }
 
-  public AccountSearchRespConsumerAccountSets firstName(String firstName) {
+  public ConsumerResponse firstName(String firstName) {
     this.firstName = firstName;
     return this;
   }
@@ -204,7 +204,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.firstName = firstName;
   }
 
-  public AccountSearchRespConsumerAccountSets lastName(String lastName) {
+  public ConsumerResponse lastName(String lastName) {
     this.lastName = lastName;
     return this;
   }
@@ -224,7 +224,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.lastName = lastName;
   }
 
-  public AccountSearchRespConsumerAccountSets dateOfBirth(String dateOfBirth) {
+  public ConsumerResponse dateOfBirth(String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -244,7 +244,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.dateOfBirth = dateOfBirth;
   }
 
-  public AccountSearchRespConsumerAccountSets last4SSN(String last4SSN) {
+  public ConsumerResponse last4SSN(String last4SSN) {
     this.last4SSN = last4SSN;
     return this;
   }
@@ -264,7 +264,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.last4SSN = last4SSN;
   }
 
-  public AccountSearchRespConsumerAccountSets addressLine1(String addressLine1) {
+  public ConsumerResponse addressLine1(String addressLine1) {
     this.addressLine1 = addressLine1;
     return this;
   }
@@ -284,7 +284,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.addressLine1 = addressLine1;
   }
 
-  public AccountSearchRespConsumerAccountSets addressLine2(String addressLine2) {
+  public ConsumerResponse addressLine2(String addressLine2) {
     this.addressLine2 = addressLine2;
     return this;
   }
@@ -304,7 +304,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.addressLine2 = addressLine2;
   }
 
-  public AccountSearchRespConsumerAccountSets city(String city) {
+  public ConsumerResponse city(String city) {
     this.city = city;
     return this;
   }
@@ -324,7 +324,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.city = city;
   }
 
-  public AccountSearchRespConsumerAccountSets state(String state) {
+  public ConsumerResponse state(String state) {
     this.state = state;
     return this;
   }
@@ -344,7 +344,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.state = state;
   }
 
-  public AccountSearchRespConsumerAccountSets postalCode(String postalCode) {
+  public ConsumerResponse postalCode(String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -364,7 +364,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.postalCode = postalCode;
   }
 
-  public AccountSearchRespConsumerAccountSets country(String country) {
+  public ConsumerResponse country(String country) {
     this.country = country;
     return this;
   }
@@ -384,7 +384,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.country = country;
   }
 
-  public AccountSearchRespConsumerAccountSets homePhone(String homePhone) {
+  public ConsumerResponse homePhone(String homePhone) {
     this.homePhone = homePhone;
     return this;
   }
@@ -404,7 +404,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.homePhone = homePhone;
   }
 
-  public AccountSearchRespConsumerAccountSets homeUMConsent(String homeUMConsent) {
+  public ConsumerResponse homeUMConsent(String homeUMConsent) {
     this.homeUMConsent = homeUMConsent;
     return this;
   }
@@ -424,7 +424,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.homeUMConsent = homeUMConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets workPhone(String workPhone) {
+  public ConsumerResponse workPhone(String workPhone) {
     this.workPhone = workPhone;
     return this;
   }
@@ -444,7 +444,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.workPhone = workPhone;
   }
 
-  public AccountSearchRespConsumerAccountSets workConsent(String workConsent) {
+  public ConsumerResponse workConsent(String workConsent) {
     this.workConsent = workConsent;
     return this;
   }
@@ -464,7 +464,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.workConsent = workConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets workUMConsent(String workUMConsent) {
+  public ConsumerResponse workUMConsent(String workUMConsent) {
     this.workUMConsent = workUMConsent;
     return this;
   }
@@ -484,7 +484,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.workUMConsent = workUMConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets cellPhone(String cellPhone) {
+  public ConsumerResponse cellPhone(String cellPhone) {
     this.cellPhone = cellPhone;
     return this;
   }
@@ -504,7 +504,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.cellPhone = cellPhone;
   }
 
-  public AccountSearchRespConsumerAccountSets cellConsent(String cellConsent) {
+  public ConsumerResponse cellConsent(String cellConsent) {
     this.cellConsent = cellConsent;
     return this;
   }
@@ -524,7 +524,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.cellConsent = cellConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets smSConsent(String smSConsent) {
+  public ConsumerResponse smSConsent(String smSConsent) {
     this.smSConsent = smSConsent;
     return this;
   }
@@ -544,7 +544,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.smSConsent = smSConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets cellUMConsent(String cellUMConsent) {
+  public ConsumerResponse cellUMConsent(String cellUMConsent) {
     this.cellUMConsent = cellUMConsent;
     return this;
   }
@@ -564,7 +564,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.cellUMConsent = cellUMConsent;
   }
 
-  public AccountSearchRespConsumerAccountSets poEName(String poEName) {
+  public ConsumerResponse poEName(String poEName) {
     this.poEName = poEName;
     return this;
   }
@@ -584,7 +584,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.poEName = poEName;
   }
 
-  public AccountSearchRespConsumerAccountSets spouseFirstName(String spouseFirstName) {
+  public ConsumerResponse spouseFirstName(String spouseFirstName) {
     this.spouseFirstName = spouseFirstName;
     return this;
   }
@@ -604,7 +604,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.spouseFirstName = spouseFirstName;
   }
 
-  public AccountSearchRespConsumerAccountSets spouseLastName(String spouseLastName) {
+  public ConsumerResponse spouseLastName(String spouseLastName) {
     this.spouseLastName = spouseLastName;
     return this;
   }
@@ -624,7 +624,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.spouseLastName = spouseLastName;
   }
 
-  public AccountSearchRespConsumerAccountSets spouseHomePhone(String spouseHomePhone) {
+  public ConsumerResponse spouseHomePhone(String spouseHomePhone) {
     this.spouseHomePhone = spouseHomePhone;
     return this;
   }
@@ -644,7 +644,7 @@ public class AccountSearchRespConsumerAccountSets   {
     this.spouseHomePhone = spouseHomePhone;
   }
 
-  public AccountSearchRespConsumerAccountSets minimumPaymentAmount(String minimumPaymentAmount) {
+  public ConsumerResponse minimumPaymentAmount(String minimumPaymentAmount) {
     this.minimumPaymentAmount = minimumPaymentAmount;
     return this;
   }
@@ -664,14 +664,14 @@ public class AccountSearchRespConsumerAccountSets   {
     this.minimumPaymentAmount = minimumPaymentAmount;
   }
 
-  public AccountSearchRespConsumerAccountSets accounts(List<AccountSearchRespAccounts> accounts) {
+  public ConsumerResponse accounts(List<ConsumerAccountResponse> accounts) {
     this.accounts = accounts;
     return this;
   }
 
-  public AccountSearchRespConsumerAccountSets addAccountsItem(AccountSearchRespAccounts accountsItem) {
+  public ConsumerResponse addAccountsItem(ConsumerAccountResponse accountsItem) {
     if (this.accounts == null) {
-      this.accounts = new ArrayList<AccountSearchRespAccounts>();
+      this.accounts = new ArrayList<ConsumerAccountResponse>();
     }
     this.accounts.add(accountsItem);
     return this;
@@ -685,11 +685,11 @@ public class AccountSearchRespConsumerAccountSets   {
 
   @Valid
 
-  public List<AccountSearchRespAccounts> getAccounts() {
+  public List<ConsumerAccountResponse> getAccounts() {
     return accounts;
   }
 
-  public void setAccounts(List<AccountSearchRespAccounts> accounts) {
+  public void setAccounts(List<ConsumerAccountResponse> accounts) {
     this.accounts = accounts;
   }
 
@@ -702,36 +702,36 @@ public class AccountSearchRespConsumerAccountSets   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountSearchRespConsumerAccountSets accountSearchRespConsumerAccountSets = (AccountSearchRespConsumerAccountSets) o;
-    return Objects.equals(this.consumerId, accountSearchRespConsumerAccountSets.consumerId) &&
-        Objects.equals(this.status, accountSearchRespConsumerAccountSets.status) &&
-        Objects.equals(this.balance, accountSearchRespConsumerAccountSets.balance) &&
-        Objects.equals(this.lastCall, accountSearchRespConsumerAccountSets.lastCall) &&
-        Objects.equals(this.firstName, accountSearchRespConsumerAccountSets.firstName) &&
-        Objects.equals(this.lastName, accountSearchRespConsumerAccountSets.lastName) &&
-        Objects.equals(this.dateOfBirth, accountSearchRespConsumerAccountSets.dateOfBirth) &&
-        Objects.equals(this.last4SSN, accountSearchRespConsumerAccountSets.last4SSN) &&
-        Objects.equals(this.addressLine1, accountSearchRespConsumerAccountSets.addressLine1) &&
-        Objects.equals(this.addressLine2, accountSearchRespConsumerAccountSets.addressLine2) &&
-        Objects.equals(this.city, accountSearchRespConsumerAccountSets.city) &&
-        Objects.equals(this.state, accountSearchRespConsumerAccountSets.state) &&
-        Objects.equals(this.postalCode, accountSearchRespConsumerAccountSets.postalCode) &&
-        Objects.equals(this.country, accountSearchRespConsumerAccountSets.country) &&
-        Objects.equals(this.homePhone, accountSearchRespConsumerAccountSets.homePhone) &&
-        Objects.equals(this.homeUMConsent, accountSearchRespConsumerAccountSets.homeUMConsent) &&
-        Objects.equals(this.workPhone, accountSearchRespConsumerAccountSets.workPhone) &&
-        Objects.equals(this.workConsent, accountSearchRespConsumerAccountSets.workConsent) &&
-        Objects.equals(this.workUMConsent, accountSearchRespConsumerAccountSets.workUMConsent) &&
-        Objects.equals(this.cellPhone, accountSearchRespConsumerAccountSets.cellPhone) &&
-        Objects.equals(this.cellConsent, accountSearchRespConsumerAccountSets.cellConsent) &&
-        Objects.equals(this.smSConsent, accountSearchRespConsumerAccountSets.smSConsent) &&
-        Objects.equals(this.cellUMConsent, accountSearchRespConsumerAccountSets.cellUMConsent) &&
-        Objects.equals(this.poEName, accountSearchRespConsumerAccountSets.poEName) &&
-        Objects.equals(this.spouseFirstName, accountSearchRespConsumerAccountSets.spouseFirstName) &&
-        Objects.equals(this.spouseLastName, accountSearchRespConsumerAccountSets.spouseLastName) &&
-        Objects.equals(this.spouseHomePhone, accountSearchRespConsumerAccountSets.spouseHomePhone) &&
-        Objects.equals(this.minimumPaymentAmount, accountSearchRespConsumerAccountSets.minimumPaymentAmount) &&
-        Objects.equals(this.accounts, accountSearchRespConsumerAccountSets.accounts);
+    ConsumerResponse consumerResponse = (ConsumerResponse) o;
+    return Objects.equals(this.consumerId, consumerResponse.consumerId) &&
+        Objects.equals(this.status, consumerResponse.status) &&
+        Objects.equals(this.balance, consumerResponse.balance) &&
+        Objects.equals(this.lastCall, consumerResponse.lastCall) &&
+        Objects.equals(this.firstName, consumerResponse.firstName) &&
+        Objects.equals(this.lastName, consumerResponse.lastName) &&
+        Objects.equals(this.dateOfBirth, consumerResponse.dateOfBirth) &&
+        Objects.equals(this.last4SSN, consumerResponse.last4SSN) &&
+        Objects.equals(this.addressLine1, consumerResponse.addressLine1) &&
+        Objects.equals(this.addressLine2, consumerResponse.addressLine2) &&
+        Objects.equals(this.city, consumerResponse.city) &&
+        Objects.equals(this.state, consumerResponse.state) &&
+        Objects.equals(this.postalCode, consumerResponse.postalCode) &&
+        Objects.equals(this.country, consumerResponse.country) &&
+        Objects.equals(this.homePhone, consumerResponse.homePhone) &&
+        Objects.equals(this.homeUMConsent, consumerResponse.homeUMConsent) &&
+        Objects.equals(this.workPhone, consumerResponse.workPhone) &&
+        Objects.equals(this.workConsent, consumerResponse.workConsent) &&
+        Objects.equals(this.workUMConsent, consumerResponse.workUMConsent) &&
+        Objects.equals(this.cellPhone, consumerResponse.cellPhone) &&
+        Objects.equals(this.cellConsent, consumerResponse.cellConsent) &&
+        Objects.equals(this.smSConsent, consumerResponse.smSConsent) &&
+        Objects.equals(this.cellUMConsent, consumerResponse.cellUMConsent) &&
+        Objects.equals(this.poEName, consumerResponse.poEName) &&
+        Objects.equals(this.spouseFirstName, consumerResponse.spouseFirstName) &&
+        Objects.equals(this.spouseLastName, consumerResponse.spouseLastName) &&
+        Objects.equals(this.spouseHomePhone, consumerResponse.spouseHomePhone) &&
+        Objects.equals(this.minimumPaymentAmount, consumerResponse.minimumPaymentAmount) &&
+        Objects.equals(this.accounts, consumerResponse.accounts);
   }
 
   @Override
