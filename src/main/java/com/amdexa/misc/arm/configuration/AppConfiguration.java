@@ -18,6 +18,7 @@
 package com.amdexa.misc.arm.configuration;
 
 import com.fasterxml.jackson.datatype.threetenbp.ThreeTenModule;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -26,7 +27,7 @@ import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.ZonedDateTime;
 
 @Configuration
-public class JacksonConfiguration {
+public class AppConfiguration {
 
   @Bean
   @ConditionalOnMissingBean(ThreeTenModule.class)
@@ -36,5 +37,10 @@ public class JacksonConfiguration {
     module.addDeserializer(OffsetDateTime.class, CustomInstantDeserializer.OFFSET_DATE_TIME);
     module.addDeserializer(ZonedDateTime.class, CustomInstantDeserializer.ZONED_DATE_TIME);
     return module;
+  }
+
+  @Bean
+  public ModelMapper modelMapper() {
+    return new ModelMapper();
   }
 }
