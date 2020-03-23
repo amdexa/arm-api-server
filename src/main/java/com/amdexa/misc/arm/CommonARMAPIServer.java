@@ -26,7 +26,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.amdexa.misc.arm", "com.amdexa.misc.arm.api", "com.amdexa.misc.arm.configuration"})
+@ComponentScan(basePackages = {"com.amdexa.misc.arm", "com.amdexa.misc.arm.api", "com.amdexa.misc.arm.configuration", "com.amdexa.misc.arm.dao.repository"})
 public class CommonARMAPIServer {
 
     public static void main(String[] args) {

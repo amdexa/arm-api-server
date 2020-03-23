@@ -31,8 +31,8 @@ public class AccountSearchRequest extends PredictableRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccountSearchRequest accountSearchBySSNRequest = (AccountSearchRequest) o;
-    return Objects.equals(this.predicates, accountSearchBySSNRequest.predicates);
+    AccountSearchRequest accountSearchRequest = (AccountSearchRequest) o;
+    return Objects.equals(this.predicates, accountSearchRequest.predicates);
   }
 
   @Override

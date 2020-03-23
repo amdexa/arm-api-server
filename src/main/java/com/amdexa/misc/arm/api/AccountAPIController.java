@@ -1,5 +1,8 @@
 package com.amdexa.misc.arm.api;
 
+import com.amdexa.misc.arm.dao.model.Consumer;
+import com.amdexa.misc.arm.dao.model.ConsumerAccount;
+import com.amdexa.misc.arm.dao.repository.ConsumerRepository;
 import com.amdexa.misc.arm.model.AccountSearchRequest;
 import com.amdexa.misc.arm.model.AccountResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,15 +19,21 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.HashSet;
 
 @Controller
 public class AccountAPIController implements AccountAPI {
 
     private static final Logger log = LoggerFactory.getLogger(AccountAPIController.class);
 
+    private final HttpServletRequest request;
+
+    @Autowired
     private final ObjectMapper objectMapper;
 
-    private final HttpServletRequest request;
+    @Autowired
+    private ConsumerRepository consumerRepository;
+
 
     @Autowired
     public AccountAPIController(ObjectMapper objectMapper, HttpServletRequest request) {
@@ -34,6 +43,13 @@ public class AccountAPIController implements AccountAPI {
 
     public ResponseEntity<AccountResponse> search(@ApiParam(value = "The username of the user for the login.", required = true) @RequestHeader(value = "username", required = true) String username, @ApiParam(value = "A unique session id for this login.", required = true) @RequestHeader(value = "sessionId", required = true) String sessionId, @ApiParam(value = "The Account Search request body is a JSON Object follows the accountSearchRequest schema.  The object has the following properties:", required = true) @Valid @RequestBody AccountSearchRequest accountSearchRequest) {
         String accept = request.getHeader("Accept");
+        Consumer consumer = new Consumer();
+        consumer.setFirstName("First");
+        consumer.setLastName("Last");
+        HashSet<ConsumerAccount> accounts = new HashSet<>();
+        accounts.add(new ConsumerAccount());
+        consumer.setAccounts(accounts);
+        consumerRepository.save(consumer);
         if (accept != null && accept.contains("application/json")) {
             try {
                 return new ResponseEntity<>(objectMapper.readValue("{  \"ConsumerAccountSets\" : [ {    \"CellPhone\" : \"CellPhone\",    \"PostalCode\" : \"PostalCode\",    \"SpouseLastName\" : \"SpouseLastName\",    \"CellConsent\" : \"CellConsent\",    \"SpouseFirstName\" : \"SpouseFirstName\",    \"CellUMConsent\" : \"CellUMConsent\",    \"HomeUMConsent\" : \"HomeUMConsent\",    \"Status\" : \"Status\",    \"DateOfBirth\" : \"DateOfBirth\",    \"LastCall\" : \"LastCall\",    \"POEName\" : \"POEName\",    \"WorkPhone\" : \"WorkPhone\",    \"consumerId\" : \"consumerId\",    \"FirstName\" : \"FirstName\",    \"SpouseHomePhone\" : \"SpouseHomePhone\",    \"City\" : \"City\",    \"WorkUMConsent\" : \"WorkUMConsent\",    \"AddressLine2\" : \"AddressLine2\",    \"AddressLine1\" : \"AddressLine1\",    \"SMSConsent\" : \"SMSConsent\",    \"HomePhone\" : \"HomePhone\",    \"State\" : \"State\",    \"Country\" : \"Country\",    \"LastName\" : \"LastName\",    \"Balance\" : \"Balance\",    \"Last4SSN\" : \"Last4SSN\",    \"WorkConsent\" : \"WorkConsent\",    \"Accounts\" : [ {      \"ClientName\" : \"ClientName\",      \"ComakerFirstName\" : \"ComakerFirstName\",      \"AttorneyName\" : \"AttorneyName\",      \"ListDate\" : \"ListDate\",      \"ComakerLastName\" : \"ComakerLastName\",      \"AccountNumber\" : \"AccountNumber\",      \"AttorneyPhone\" : \"AttorneyPhone\"    }, {      \"ClientName\" : \"ClientName\",      \"ComakerFirstName\" : \"ComakerFirstName\",      \"AttorneyName\" : \"AttorneyName\",      \"ListDate\" : \"ListDate\",      \"ComakerLastName\" : \"ComakerLastName\",      \"AccountNumber\" : \"AccountNumber\",      \"AttorneyPhone\" : \"AttorneyPhone\"    } ],    \"MinimumPaymentAmount\" : \"MinimumPaymentAmount\"  }, {    \"CellPhone\" : \"CellPhone\",    \"PostalCode\" : \"PostalCode\",    \"SpouseLastName\" : \"SpouseLastName\",    \"CellConsent\" : \"CellConsent\",    \"SpouseFirstName\" : \"SpouseFirstName\",    \"CellUMConsent\" : \"CellUMConsent\",    \"HomeUMConsent\" : \"HomeUMConsent\",    \"Status\" : \"Status\",    \"DateOfBirth\" : \"DateOfBirth\",    \"LastCall\" : \"LastCall\",    \"POEName\" : \"POEName\",    \"WorkPhone\" : \"WorkPhone\",    \"consumerId\" : \"consumerId\",    \"FirstName\" : \"FirstName\",    \"SpouseHomePhone\" : \"SpouseHomePhone\",    \"City\" : \"City\",    \"WorkUMConsent\" : \"WorkUMConsent\",    \"AddressLine2\" : \"AddressLine2\",    \"AddressLine1\" : \"AddressLine1\",    \"SMSConsent\" : \"SMSConsent\",    \"HomePhone\" : \"HomePhone\",    \"State\" : \"State\",    \"Country\" : \"Country\",    \"LastName\" : \"LastName\",    \"Balance\" : \"Balance\",    \"Last4SSN\" : \"Last4SSN\",    \"WorkConsent\" : \"WorkConsent\",    \"Accounts\" : [ {      \"ClientName\" : \"ClientName\",      \"ComakerFirstName\" : \"ComakerFirstName\",      \"AttorneyName\" : \"AttorneyName\",      \"ListDate\" : \"ListDate\",      \"ComakerLastName\" : \"ComakerLastName\",      \"AccountNumber\" : \"AccountNumber\",      \"AttorneyPhone\" : \"AttorneyPhone\"    }, {      \"ClientName\" : \"ClientName\",      \"ComakerFirstName\" : \"ComakerFirstName\",      \"AttorneyName\" : \"AttorneyName\",      \"ListDate\" : \"ListDate\",      \"ComakerLastName\" : \"ComakerLastName\",      \"AccountNumber\" : \"AccountNumber\",      \"AttorneyPhone\" : \"AttorneyPhone\"    } ],    \"MinimumPaymentAmount\" : \"MinimumPaymentAmount\"  } ],  \"correlationID\" : \"correlationID\"}", AccountResponse.class), HttpStatus.NOT_IMPLEMENTED);
