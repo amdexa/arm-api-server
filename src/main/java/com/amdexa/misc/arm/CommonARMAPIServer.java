@@ -20,13 +20,15 @@ package com.amdexa.misc.arm;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.amdexa.misc.arm", "com.amdexa.misc.arm.api", "com.amdexa.misc.arm.configuration", "com.amdexa.misc.arm.dao.repository"})
+@ComponentScan(basePackages = {"com.amdexa.misc.arm", "com.amdexa.misc.arm.api", "com.amdexa.misc.arm.configuration"})
+@EntityScan("com.amdexa.misc.arm.dao.model")
 public class CommonARMAPIServer {
 
     public static void main(String[] args) {
