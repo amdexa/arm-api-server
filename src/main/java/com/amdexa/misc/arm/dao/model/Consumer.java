@@ -69,7 +69,7 @@ public class Consumer {
 
     private String minimumPaymentAmount;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "consumer_id")
     private Set<ConsumerAccount> accounts;
 
