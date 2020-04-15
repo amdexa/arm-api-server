@@ -6,6 +6,15 @@ server:
     contextPath: /v1
     port: 8080
 spring:
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://${app.db.host}:3306/${app.db.name}
+        username: ${app.db.username}
+        password: ${app.db.password}
+    jpa:
+        hibernate.ddl-auto: update
+        generate-ddl: true
+        show-sql: true
     jackson:
         date-format: com.amdexa.misc.arm.RFC3339DateFormat
         serialization:
