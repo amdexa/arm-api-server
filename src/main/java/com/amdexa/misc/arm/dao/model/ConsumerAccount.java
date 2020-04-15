@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Entity
 @Data
-@EqualsAndHashCode
+@EqualsAndHashCode(exclude = {"consumer"})
 public class ConsumerAccount implements Serializable {
 
     @Id
