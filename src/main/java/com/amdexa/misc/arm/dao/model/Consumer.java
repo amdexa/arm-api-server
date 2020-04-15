@@ -13,7 +13,8 @@ import java.util.Set;
 public class Consumer implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "consumer_seq", sequenceName = "consumer_seq", initialValue = 1044020100)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "consumer_seq")
     private Long id;
 
     private String status;

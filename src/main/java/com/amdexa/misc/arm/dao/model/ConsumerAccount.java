@@ -12,7 +12,8 @@ import java.io.Serializable;
 public class ConsumerAccount implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "account_seq", sequenceName = "account_seq", initialValue = 10020100)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "account_seq")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
