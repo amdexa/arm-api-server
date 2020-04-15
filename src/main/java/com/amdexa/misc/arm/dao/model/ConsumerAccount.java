@@ -4,18 +4,19 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Data
 @EqualsAndHashCode
-public class ConsumerAccount {
+public class ConsumerAccount implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long accountNumber;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="consumer_id", nullable=false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "consumer_id", nullable = false)
     private Consumer consumer;
 
     private String clientName;

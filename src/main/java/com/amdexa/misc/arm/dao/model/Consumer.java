@@ -4,16 +4,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Data
 @EqualsAndHashCode
-public class Consumer {
+public class Consumer implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long consumerId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String status;
 
@@ -69,8 +70,7 @@ public class Consumer {
 
     private String minimumPaymentAmount;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "consumer_id")
+    @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ConsumerAccount> accounts;
 
 }

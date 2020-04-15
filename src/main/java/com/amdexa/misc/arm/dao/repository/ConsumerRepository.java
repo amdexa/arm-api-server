@@ -11,5 +11,5 @@ public interface ConsumerRepository  extends CrudRepository<Consumer, Long> {
 
     List<Consumer> findByFirstNameAndLastName(String firstName, String lastName);
 
-    Consumer findByConsumerId(long id);
+    Consumer findById(long id);
 }
