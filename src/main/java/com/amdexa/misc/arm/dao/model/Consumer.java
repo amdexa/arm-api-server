@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -13,15 +14,11 @@ import java.util.Set;
 public class Consumer implements Serializable {
 
     @Id
-    @SequenceGenerator(name = "consumer_seq", sequenceName = "consumer_seq", initialValue = 1044020100)
+    @SequenceGenerator(name = "consumer_seq", sequenceName = "consumer_seq", initialValue = 1044020100, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "consumer_seq")
     private Long id;
 
     private String status;
-
-    private String balance;
-
-    private String lastCall;
 
     private String firstName;
 
@@ -29,50 +26,38 @@ public class Consumer implements Serializable {
 
     private String dateOfBirth;
 
-    private String last4SSN;
-
-    private String addressLine1;
-
-    private String addressLine2;
-
-    private String city;
-
-    private String state;
-
-    private String postalCode;
-
-    private String country;
+    private String ssn;
 
     private String homePhone;
 
-    private String homeUMConsent;
-
     private String workPhone;
 
-    private String workConsent;
-
-    private String workUMConsent;
+    private boolean workConsent;
 
     private String cellPhone;
 
-    private String cellConsent;
+    private boolean cellConsent;
 
-    private String smSConsent;
+    private boolean smsConsent;
 
-    private String cellUMConsent;
+    private String lastCall;
 
-    private String poEName;
+    private String employer;
 
-    private String spouseFirstName;
+    private String jobTitle;
 
-    private String spouseLastName;
+    private BigDecimal balance;
 
-    private String spouseHomePhone;
-
-    private String minimumPaymentAmount;
+    private BigDecimal minimumPaymentAmount;
 
     @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<ConsumerAccount> accounts;
+
+    @OneToOne(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Address address;
+
+    @OneToOne(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Spouse spouse;
 
 }
 

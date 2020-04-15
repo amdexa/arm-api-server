@@ -61,17 +61,11 @@ public class ConsumerResponse {
   @JsonProperty("HomePhone")
   private String homePhone = null;
 
-  @JsonProperty("HomeUMConsent")
-  private String homeUMConsent = null;
-
   @JsonProperty("WorkPhone")
   private String workPhone = null;
 
   @JsonProperty("WorkConsent")
   private String workConsent = null;
-
-  @JsonProperty("WorkUMConsent")
-  private String workUMConsent = null;
 
   @JsonProperty("CellPhone")
   private String cellPhone = null;
@@ -81,9 +75,6 @@ public class ConsumerResponse {
 
   @JsonProperty("SMSConsent")
   private String smSConsent = null;
-
-  @JsonProperty("CellUMConsent")
-  private String cellUMConsent = null;
 
   @JsonProperty("POEName")
   private String poEName = null;
@@ -404,26 +395,6 @@ public class ConsumerResponse {
     this.homePhone = homePhone;
   }
 
-  public ConsumerResponse homeUMConsent(String homeUMConsent) {
-    this.homeUMConsent = homeUMConsent;
-    return this;
-  }
-
-  /**
-   * Home UM consent for account owner
-   * @return homeUMConsent
-  **/
-  @ApiModelProperty(value = "Home UM consent for account owner")
-
-
-  public String getHomeUMConsent() {
-    return homeUMConsent;
-  }
-
-  public void setHomeUMConsent(String homeUMConsent) {
-    this.homeUMConsent = homeUMConsent;
-  }
-
   public ConsumerResponse workPhone(String workPhone) {
     this.workPhone = workPhone;
     return this;
@@ -462,26 +433,6 @@ public class ConsumerResponse {
 
   public void setWorkConsent(String workConsent) {
     this.workConsent = workConsent;
-  }
-
-  public ConsumerResponse workUMConsent(String workUMConsent) {
-    this.workUMConsent = workUMConsent;
-    return this;
-  }
-
-  /**
-   * Work Phone UM consent for account owner
-   * @return workUMConsent
-  **/
-  @ApiModelProperty(value = "Work Phone UM consent for account owner")
-
-
-  public String getWorkUMConsent() {
-    return workUMConsent;
-  }
-
-  public void setWorkUMConsent(String workUMConsent) {
-    this.workUMConsent = workUMConsent;
   }
 
   public ConsumerResponse cellPhone(String cellPhone) {
@@ -542,26 +493,6 @@ public class ConsumerResponse {
 
   public void setSmSConsent(String smSConsent) {
     this.smSConsent = smSConsent;
-  }
-
-  public ConsumerResponse cellUMConsent(String cellUMConsent) {
-    this.cellUMConsent = cellUMConsent;
-    return this;
-  }
-
-  /**
-   * SMS UM consent for account owner
-   * @return cellUMConsent
-  **/
-  @ApiModelProperty(value = "SMS UM consent for account owner")
-
-
-  public String getCellUMConsent() {
-    return cellUMConsent;
-  }
-
-  public void setCellUMConsent(String cellUMConsent) {
-    this.cellUMConsent = cellUMConsent;
   }
 
   public ConsumerResponse poEName(String poEName) {
@@ -718,14 +649,11 @@ public class ConsumerResponse {
         Objects.equals(this.postalCode, consumerResponse.postalCode) &&
         Objects.equals(this.country, consumerResponse.country) &&
         Objects.equals(this.homePhone, consumerResponse.homePhone) &&
-        Objects.equals(this.homeUMConsent, consumerResponse.homeUMConsent) &&
         Objects.equals(this.workPhone, consumerResponse.workPhone) &&
         Objects.equals(this.workConsent, consumerResponse.workConsent) &&
-        Objects.equals(this.workUMConsent, consumerResponse.workUMConsent) &&
         Objects.equals(this.cellPhone, consumerResponse.cellPhone) &&
         Objects.equals(this.cellConsent, consumerResponse.cellConsent) &&
         Objects.equals(this.smSConsent, consumerResponse.smSConsent) &&
-        Objects.equals(this.cellUMConsent, consumerResponse.cellUMConsent) &&
         Objects.equals(this.poEName, consumerResponse.poEName) &&
         Objects.equals(this.spouseFirstName, consumerResponse.spouseFirstName) &&
         Objects.equals(this.spouseLastName, consumerResponse.spouseLastName) &&
@@ -736,7 +664,7 @@ public class ConsumerResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(consumerId, status, balance, lastCall, firstName, lastName, dateOfBirth, last4SSN, addressLine1, addressLine2, city, state, postalCode, country, homePhone, homeUMConsent, workPhone, workConsent, workUMConsent, cellPhone, cellConsent, smSConsent, cellUMConsent, poEName, spouseFirstName, spouseLastName, spouseHomePhone, minimumPaymentAmount, accounts);
+    return Objects.hash(consumerId, status, balance, lastCall, firstName, lastName, dateOfBirth, last4SSN, addressLine1, addressLine2, city, state, postalCode, country, homePhone, workPhone, workConsent, cellPhone, cellConsent, smSConsent, poEName, spouseFirstName, spouseLastName, spouseHomePhone, minimumPaymentAmount, accounts);
   }
 
   @Override
@@ -759,14 +687,11 @@ public class ConsumerResponse {
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    homePhone: ").append(toIndentedString(homePhone)).append("\n");
-    sb.append("    homeUMConsent: ").append(toIndentedString(homeUMConsent)).append("\n");
     sb.append("    workPhone: ").append(toIndentedString(workPhone)).append("\n");
     sb.append("    workConsent: ").append(toIndentedString(workConsent)).append("\n");
-    sb.append("    workUMConsent: ").append(toIndentedString(workUMConsent)).append("\n");
     sb.append("    cellPhone: ").append(toIndentedString(cellPhone)).append("\n");
     sb.append("    cellConsent: ").append(toIndentedString(cellConsent)).append("\n");
     sb.append("    smSConsent: ").append(toIndentedString(smSConsent)).append("\n");
-    sb.append("    cellUMConsent: ").append(toIndentedString(cellUMConsent)).append("\n");
     sb.append("    poEName: ").append(toIndentedString(poEName)).append("\n");
     sb.append("    spouseFirstName: ").append(toIndentedString(spouseFirstName)).append("\n");
     sb.append("    spouseLastName: ").append(toIndentedString(spouseLastName)).append("\n");

@@ -24,7 +24,7 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     @Transactional
-    public Consumer findById(int id) {
+    public Consumer findById(long id) {
         return consumerRepository.findById(id);
     }
 

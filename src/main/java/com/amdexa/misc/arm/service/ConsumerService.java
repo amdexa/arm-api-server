@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public interface ConsumerService {
     Consumer saveConsumer(Consumer student);
 
-    Consumer findById(int id);
+    Consumer findById(long id);
 
     Consumer updateConsumer(Consumer student);
 }
