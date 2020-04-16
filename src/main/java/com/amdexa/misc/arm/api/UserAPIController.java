@@ -53,7 +53,7 @@ public class UserAPIController implements UserAPI {
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Loginresponse> login(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Login Request Body is a JSON object with the following properties:" ,required=true )  @Valid @RequestBody Loginrequest loginrequest, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId) {
+    public ResponseEntity<Loginresponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:" ,required=true )  @Valid @RequestBody Loginrequest loginrequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

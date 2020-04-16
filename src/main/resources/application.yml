@@ -3,7 +3,8 @@ management:
         git:
             mode: full
 server:
-    contextPath: /v1
+#    servlet:
+#        contextPath: /api/v1
     port: 8080
 spring:
     datasource:
@@ -22,8 +23,23 @@ spring:
         date-format: com.amdexa.misc.arm.RFC3339DateFormat
         serialization:
             WRITE_DATES_AS_TIMESTAMPS: false
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: ${app.issuer_uri}
 springfox:
     documentation:
         swagger:
             v2:
                 path: /api-docs
+
+auth0:
+    audience: ${app.audience}
+
+logging:
+    level:
+        org:
+            springframework:
+                security: DEBUG
+

@@ -65,6 +65,7 @@ public interface UserAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Loginresponse> login(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Login Request Body is a JSON object with the following properties:" ,required=true )  @Valid @RequestBody Loginrequest loginrequest, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="sessionId", required=false) String sessionId);
+    ResponseEntity<Loginresponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true)
+                                        @Valid @RequestBody Loginrequest loginrequest);
 
 }
