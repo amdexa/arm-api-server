@@ -37,7 +37,7 @@ public class ProcessAPIController implements ProcessAPI {
         this.request = request;
     }
 
-    public ResponseEntity<GeneralSuccessResp> processAttorney(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The attorney endpoint request body is a JSON Object following the attorneyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody AttorneyRequest attorneyRequest) {
+    public ResponseEntity<GeneralSuccessResp> processAttorney( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The attorney endpoint request body is a JSON Object following the attorneyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody AttorneyRequest attorneyRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -51,7 +51,7 @@ public class ProcessAPIController implements ProcessAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> processBankruptcy(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The bankruptcy endpoint request body is a JSON Object following the bankruptcyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody BankruptcyRequest bankruptcyRequest) {
+    public ResponseEntity<GeneralSuccessResp> processBankruptcy( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The bankruptcy endpoint request body is a JSON Object following the bankruptcyRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody BankruptcyRequest bankruptcyRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -65,7 +65,7 @@ public class ProcessAPIController implements ProcessAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> processCease(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The cease and desist endpoint request body is a JSON Object following the ceaseAndDesistRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody CeaseRequest ceaseRequest) {
+    public ResponseEntity<GeneralSuccessResp> processCease( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The cease and desist endpoint request body is a JSON Object following the ceaseAndDesistRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody CeaseRequest ceaseRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -79,7 +79,7 @@ public class ProcessAPIController implements ProcessAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> processDeceased(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The deceased endpoint request body is a JSON Object following the deceasedRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeceasedRequest deceasedRequest) {
+    public ResponseEntity<GeneralSuccessResp> processDeceased( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The deceased endpoint request body is a JSON Object following the deceasedRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeceasedRequest deceasedRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -93,7 +93,7 @@ public class ProcessAPIController implements ProcessAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> processDispute(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The dispute endpoint request body is a JSON Object following the disputeRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DisputeRequest disputeRequest) {
+    public ResponseEntity<GeneralSuccessResp> processDispute( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The dispute endpoint request body is a JSON Object following the disputeRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DisputeRequest disputeRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -107,7 +107,7 @@ public class ProcessAPIController implements ProcessAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> processInsurance(@ApiParam(value = "The username of the user for the login." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="sessionId", required=true) String sessionId, @ApiParam(value = "The insurance endpoint request body is a JSON Object following the insuranceRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody InsuranceRequest insuranceRequest) {
+    public ResponseEntity<GeneralSuccessResp> processInsurance( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The insurance endpoint request body is a JSON Object following the insuranceRequest schema.  The object has the following properties." ,required=true )  @Valid @RequestBody InsuranceRequest insuranceRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
