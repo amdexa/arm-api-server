@@ -27,7 +27,7 @@ spring:
         oauth2:
             resourceserver:
                 jwt:
-                    issuer-uri: ${app.issuer_uri}
+                    issuer-uri: ${app.auth.issuer_uri}
 springfox:
     documentation:
         swagger:
@@ -35,11 +35,12 @@ springfox:
                 path: /api-docs
 
 auth0:
-    audience: ${app.audience}
+    audience: ${app.auth.audience}
+    client_id: ${app.auth.client_id}
+    client_secret: ${app.auth.client_secret}
 
 logging:
     level:
         org:
             springframework:
                 security: DEBUG
-

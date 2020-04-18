@@ -37,7 +37,7 @@ public class AccountAPIController implements AccountAPI {
         this.request = request;
     }
 
-    public ResponseEntity<AccountResponse> search(@ApiParam(value = "A unique session id for this login.", required = true) @RequestHeader(value = "sessionId", required = true) String sessionId, @ApiParam(value = "The Account Search request body is a JSON Object follows the accountSearchRequest schema.  The object has the following properties:", required = true) @Valid @RequestBody AccountSearchRequest accountSearchRequest) {
+    public ResponseEntity<AccountResponse> search(@ApiParam(value = "A unique session id for this login.", required = true) @RequestHeader(value = "authorization", required = true) String sessionId, @ApiParam(value = "The Account Search request body is a JSON Object follows the accountSearchRequest schema.  The object has the following properties:", required = true) @Valid @RequestBody AccountSearchRequest accountSearchRequest) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
