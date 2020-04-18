@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
@@ -32,5 +36,11 @@ public class ConsumerServiceImpl implements ConsumerService {
     @Transactional
     public Consumer updateConsumer(Consumer consumer) {
         return consumerRepository.save(consumer);
+    }
+
+    @Override
+    public List<Consumer> listConsumers() {
+        return StreamSupport.stream(consumerRepository.findAll().spliterator(), false)
+                .collect(Collectors.toList());
     }
 }

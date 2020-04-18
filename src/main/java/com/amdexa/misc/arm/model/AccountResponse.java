@@ -21,9 +21,9 @@ public class AccountResponse {
   @JsonProperty("correlationID")
   private String correlationID = null;
 
-  @JsonProperty("ConsumerAccountSets")
+  @JsonProperty("Consumers")
   @Valid
-  private List<ConsumerResponse> consumerAccountSets = null;
+  private List<ConsumerResponse> consumers = null;
 
   public AccountResponse correlationID(String correlationID) {
     this.correlationID = correlationID;
@@ -46,15 +46,15 @@ public class AccountResponse {
   }
 
   public AccountResponse consumerAccountSets(List<ConsumerResponse> consumerAccountSets) {
-    this.consumerAccountSets = consumerAccountSets;
+    this.consumers = consumerAccountSets;
     return this;
   }
 
   public AccountResponse addConsumerAccountSetsItem(ConsumerResponse consumerAccountSetsItem) {
-    if (this.consumerAccountSets == null) {
-      this.consumerAccountSets = new ArrayList<ConsumerResponse>();
+    if (this.consumers == null) {
+      this.consumers = new ArrayList<ConsumerResponse>();
     }
-    this.consumerAccountSets.add(consumerAccountSetsItem);
+    this.consumers.add(consumerAccountSetsItem);
     return this;
   }
 
@@ -66,12 +66,12 @@ public class AccountResponse {
 
   @Valid
 
-  public List<ConsumerResponse> getConsumerAccountSets() {
-    return consumerAccountSets;
+  public List<ConsumerResponse> getConsumers() {
+    return consumers;
   }
 
-  public void setConsumerAccountSets(List<ConsumerResponse> consumerAccountSets) {
-    this.consumerAccountSets = consumerAccountSets;
+  public void setConsumers(List<ConsumerResponse> consumers) {
+    this.consumers = consumers;
   }
 
 
@@ -85,12 +85,12 @@ public class AccountResponse {
     }
     AccountResponse accountResponse = (AccountResponse) o;
     return Objects.equals(this.correlationID, accountResponse.correlationID) &&
-        Objects.equals(this.consumerAccountSets, accountResponse.consumerAccountSets);
+        Objects.equals(this.consumers, accountResponse.consumers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(correlationID, consumerAccountSets);
+    return Objects.hash(correlationID, consumers);
   }
 
   @Override
@@ -99,7 +99,7 @@ public class AccountResponse {
     sb.append("class AccountSearchResp {\n");
     
     sb.append("    correlationID: ").append(toIndentedString(correlationID)).append("\n");
-    sb.append("    consumerAccountSets: ").append(toIndentedString(consumerAccountSets)).append("\n");
+    sb.append("    consumerAccountSets: ").append(toIndentedString(consumers)).append("\n");
     sb.append("}");
     return sb.toString();
   }

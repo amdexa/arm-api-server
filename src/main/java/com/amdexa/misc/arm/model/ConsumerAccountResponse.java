@@ -13,7 +13,7 @@ import org.springframework.validation.annotation.Validated;
 
 public class ConsumerAccountResponse {
   @JsonProperty("AccountNumber")
-  private String accountNumber = null;
+  private String id = null;
 
   @JsonProperty("ClientName")
   private String clientName = null;
@@ -34,7 +34,7 @@ public class ConsumerAccountResponse {
   private String attorneyPhone = null;
 
   public ConsumerAccountResponse accountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
+    this.id = accountNumber;
     return this;
   }
 
@@ -45,12 +45,12 @@ public class ConsumerAccountResponse {
   @ApiModelProperty(value = "Account number")
 
 
-  public String getAccountNumber() {
-    return accountNumber;
+  public String getId() {
+    return id;
   }
 
-  public void setAccountNumber(String accountNumber) {
-    this.accountNumber = accountNumber;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public ConsumerAccountResponse clientName(String clientName) {
@@ -183,7 +183,7 @@ public class ConsumerAccountResponse {
       return false;
     }
     ConsumerAccountResponse consumerAccountResponse = (ConsumerAccountResponse) o;
-    return Objects.equals(this.accountNumber, consumerAccountResponse.accountNumber) &&
+    return Objects.equals(this.id, consumerAccountResponse.id) &&
         Objects.equals(this.clientName, consumerAccountResponse.clientName) &&
         Objects.equals(this.listDate, consumerAccountResponse.listDate) &&
         Objects.equals(this.comakerFirstName, consumerAccountResponse.comakerFirstName) &&
@@ -194,7 +194,7 @@ public class ConsumerAccountResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountNumber, clientName, listDate, comakerFirstName, comakerLastName, attorneyName, attorneyPhone);
+    return Objects.hash(id, clientName, listDate, comakerFirstName, comakerLastName, attorneyName, attorneyPhone);
   }
 
   @Override
@@ -202,7 +202,7 @@ public class ConsumerAccountResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccountSearchRespAccounts {\n");
     
-    sb.append("    accountNumber: ").append(toIndentedString(accountNumber)).append("\n");
+    sb.append("    accountNumber: ").append(toIndentedString(id)).append("\n");
     sb.append("    clientName: ").append(toIndentedString(clientName)).append("\n");
     sb.append("    listDate: ").append(toIndentedString(listDate)).append("\n");
     sb.append("    comakerFirstName: ").append(toIndentedString(comakerFirstName)).append("\n");

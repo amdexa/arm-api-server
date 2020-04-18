@@ -21,9 +21,11 @@ public class Address implements Serializable {
     @JoinColumn(name = "consumer_id", nullable = false)
     private Consumer consumer;
 
-    private String addressLine1;
+    @Column(name = "add_line1")
+    private String postalAddressLine1;
 
-    private String addressLine2;
+    @Column(name = "add_line2")
+    private String postalAddressLine2;
 
     private String city;
 

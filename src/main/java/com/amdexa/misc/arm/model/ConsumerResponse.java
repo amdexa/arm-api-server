@@ -41,10 +41,10 @@ public class ConsumerResponse {
   private String last4SSN = null;
 
   @JsonProperty("AddressLine1")
-  private String addressLine1 = null;
+  private String postalAddressLine1 = null;
 
   @JsonProperty("AddressLine2")
-  private String addressLine2 = null;
+  private String postalAddressLine2 = null;
 
   @JsonProperty("City")
   private String city = null;
@@ -76,8 +76,8 @@ public class ConsumerResponse {
   @JsonProperty("SMSConsent")
   private String smSConsent = null;
 
-  @JsonProperty("POEName")
-  private String poEName = null;
+  @JsonProperty("Employer")
+  private String employer = null;
 
   @JsonProperty("SpouseFirstName")
   private String spouseFirstName = null;
@@ -256,7 +256,7 @@ public class ConsumerResponse {
   }
 
   public ConsumerResponse addressLine1(String addressLine1) {
-    this.addressLine1 = addressLine1;
+    this.postalAddressLine1 = addressLine1;
     return this;
   }
 
@@ -267,16 +267,16 @@ public class ConsumerResponse {
   @ApiModelProperty(value = "Address1 of account owner")
 
 
-  public String getAddressLine1() {
-    return addressLine1;
+  public String getPostalAddressLine1() {
+    return postalAddressLine1;
   }
 
-  public void setAddressLine1(String addressLine1) {
-    this.addressLine1 = addressLine1;
+  public void setPostalAddressLine1(String postalAddressLine1) {
+    this.postalAddressLine1 = postalAddressLine1;
   }
 
   public ConsumerResponse addressLine2(String addressLine2) {
-    this.addressLine2 = addressLine2;
+    this.postalAddressLine2 = addressLine2;
     return this;
   }
 
@@ -287,12 +287,12 @@ public class ConsumerResponse {
   @ApiModelProperty(value = "Address2 of account owner")
 
 
-  public String getAddressLine2() {
-    return addressLine2;
+  public String getPostalAddressLine2() {
+    return postalAddressLine2;
   }
 
-  public void setAddressLine2(String addressLine2) {
-    this.addressLine2 = addressLine2;
+  public void setPostalAddressLine2(String postalAddressLine2) {
+    this.postalAddressLine2 = postalAddressLine2;
   }
 
   public ConsumerResponse city(String city) {
@@ -495,8 +495,8 @@ public class ConsumerResponse {
     this.smSConsent = smSConsent;
   }
 
-  public ConsumerResponse poEName(String poEName) {
-    this.poEName = poEName;
+  public ConsumerResponse employer(String poEName) {
+    this.employer = poEName;
     return this;
   }
 
@@ -507,12 +507,12 @@ public class ConsumerResponse {
   @ApiModelProperty(value = "POE name on account")
 
 
-  public String getPoEName() {
-    return poEName;
+  public String getEmployer() {
+    return employer;
   }
 
-  public void setPoEName(String poEName) {
-    this.poEName = poEName;
+  public void setEmployer(String employer) {
+    this.employer = employer;
   }
 
   public ConsumerResponse spouseFirstName(String spouseFirstName) {
@@ -642,8 +642,8 @@ public class ConsumerResponse {
         Objects.equals(this.lastName, consumerResponse.lastName) &&
         Objects.equals(this.dateOfBirth, consumerResponse.dateOfBirth) &&
         Objects.equals(this.last4SSN, consumerResponse.last4SSN) &&
-        Objects.equals(this.addressLine1, consumerResponse.addressLine1) &&
-        Objects.equals(this.addressLine2, consumerResponse.addressLine2) &&
+        Objects.equals(this.postalAddressLine1, consumerResponse.postalAddressLine1) &&
+        Objects.equals(this.postalAddressLine2, consumerResponse.postalAddressLine2) &&
         Objects.equals(this.city, consumerResponse.city) &&
         Objects.equals(this.state, consumerResponse.state) &&
         Objects.equals(this.postalCode, consumerResponse.postalCode) &&
@@ -654,7 +654,7 @@ public class ConsumerResponse {
         Objects.equals(this.cellPhone, consumerResponse.cellPhone) &&
         Objects.equals(this.cellConsent, consumerResponse.cellConsent) &&
         Objects.equals(this.smSConsent, consumerResponse.smSConsent) &&
-        Objects.equals(this.poEName, consumerResponse.poEName) &&
+        Objects.equals(this.employer, consumerResponse.employer) &&
         Objects.equals(this.spouseFirstName, consumerResponse.spouseFirstName) &&
         Objects.equals(this.spouseLastName, consumerResponse.spouseLastName) &&
         Objects.equals(this.spouseHomePhone, consumerResponse.spouseHomePhone) &&
@@ -664,7 +664,7 @@ public class ConsumerResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(consumerId, status, balance, lastCall, firstName, lastName, dateOfBirth, last4SSN, addressLine1, addressLine2, city, state, postalCode, country, homePhone, workPhone, workConsent, cellPhone, cellConsent, smSConsent, poEName, spouseFirstName, spouseLastName, spouseHomePhone, minimumPaymentAmount, accounts);
+    return Objects.hash(consumerId, status, balance, lastCall, firstName, lastName, dateOfBirth, last4SSN, postalAddressLine1, postalAddressLine2, city, state, postalCode, country, homePhone, workPhone, workConsent, cellPhone, cellConsent, smSConsent, employer, spouseFirstName, spouseLastName, spouseHomePhone, minimumPaymentAmount, accounts);
   }
 
   @Override
@@ -680,8 +680,8 @@ public class ConsumerResponse {
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    last4SSN: ").append(toIndentedString(last4SSN)).append("\n");
-    sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
-    sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
+    sb.append("    addressLine1: ").append(toIndentedString(postalAddressLine1)).append("\n");
+    sb.append("    addressLine2: ").append(toIndentedString(postalAddressLine2)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
@@ -692,7 +692,7 @@ public class ConsumerResponse {
     sb.append("    cellPhone: ").append(toIndentedString(cellPhone)).append("\n");
     sb.append("    cellConsent: ").append(toIndentedString(cellConsent)).append("\n");
     sb.append("    smSConsent: ").append(toIndentedString(smSConsent)).append("\n");
-    sb.append("    poEName: ").append(toIndentedString(poEName)).append("\n");
+    sb.append("    poEName: ").append(toIndentedString(employer)).append("\n");
     sb.append("    spouseFirstName: ").append(toIndentedString(spouseFirstName)).append("\n");
     sb.append("    spouseLastName: ").append(toIndentedString(spouseLastName)).append("\n");
     sb.append("    spouseHomePhone: ").append(toIndentedString(spouseHomePhone)).append("\n");
