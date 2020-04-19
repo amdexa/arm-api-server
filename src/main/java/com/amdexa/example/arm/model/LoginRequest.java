@@ -11,18 +11,23 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.*;
 
 /**
- * The Request Object to Update Spouse Information
+ * Login Request Object
  */
-@ApiModel(description = "The Request Object to Update Spouse Information")
+@ApiModel(description = "Login Request Object")
 @Validated
 @Data
 @EqualsAndHashCode
 @ToString
-public class UpdateSpouseRequest   {
-  @JsonProperty("SpouseName")
-  @ApiModelProperty(required = true, value = "The updated name of the Spouse")
-  @NotNull
-  private String spouseName = null;
+public class LoginRequest {
+    @JsonProperty("Username")
+    @ApiModelProperty(required = true, value = "The Username of the user logging in")
+    @NotNull
+    private String username = null;
+
+    @JsonProperty("Password")
+    @ApiModelProperty(required = true, value = "The user password")
+    @NotNull
+    private String password = null;
 
 }
 

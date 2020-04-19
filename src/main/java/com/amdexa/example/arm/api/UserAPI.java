@@ -18,8 +18,8 @@
 package com.amdexa.example.arm.api;
 
 import com.amdexa.example.arm.model.APIError;
-import com.amdexa.example.arm.model.Loginrequest;
-import com.amdexa.example.arm.model.Loginresponse;
+import com.amdexa.example.arm.model.LoginRequest;
+import com.amdexa.example.arm.model.LoginResponse;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,11 +34,11 @@ import javax.validation.Valid;
 @Api(value = "user", description = "The user API", tags = "User API")
 public interface UserAPI {
 
-    @ApiOperation(value = "", nickname = "checkLoginResponse", notes = "Verify the login response", response = Loginresponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "checkLoginResponse", notes = "Verify the login response", response = LoginResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "User API", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful Request", response = Loginresponse.class),
+        @ApiResponse(code = 200, message = "Successful Request", response = LoginResponse.class),
         @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
         @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
         @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
@@ -47,7 +47,7 @@ public interface UserAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Request ID returned to you as part of a status 598 on a login request.",required=true) @PathVariable("requestId") String requestId, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="authorization", required=false) String sessionId);
+    ResponseEntity<LoginResponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "The Request ID returned to you as part of a status 598 on a login request.",required=true) @PathVariable("requestId") String requestId, @ApiParam(value = "A unique session id for this login." ) @RequestHeader(value="authorization", required=false) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "checkResponse", notes = "Used to verify the response", authorizations = {
@@ -67,11 +67,11 @@ public interface UserAPI {
     ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required." ,required=true) @RequestHeader(value="username", required=true) String username, @ApiParam(value = "A unique session id for this login. Required" ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The Request ID returned.",required=true) @PathVariable("requestId") String requestId);
 
 
-    @ApiOperation(value = "", nickname = "login", notes = "Used to login to the system", response = Loginresponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "login", notes = "Used to login to the system", response = LoginResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "User API", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful Request", response = Loginresponse.class),
+        @ApiResponse(code = 200, message = "Successful Request", response = LoginResponse.class),
         @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
         @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
         @ApiResponse(code = 404, message = "Not Found Status Code", response = APIError.class),
@@ -80,7 +80,7 @@ public interface UserAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    ResponseEntity<Loginresponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true)
-                                        @Valid @RequestBody Loginrequest loginrequest);
+    ResponseEntity<LoginResponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true)
+                                        @Valid @RequestBody LoginRequest loginrequest);
 
 }

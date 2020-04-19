@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 
 import java.util.List;
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * AccountSearchRespConsumerAccountSets
@@ -101,6 +102,11 @@ public class ConsumerResponse {
   @JsonProperty("Employer")
   @ApiModelProperty(value = "Employer of account owner")
   private String employer = null;
+
+  @JsonProperty("JobTitle")
+  @ApiModelProperty(required = true, value = "Job Title at place of employment")
+  @NotNull
+  private String jobTitle = null;
 
   @JsonProperty("SpouseFirstName")
   @ApiModelProperty(value = "Spouse first name")

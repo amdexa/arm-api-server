@@ -8,21 +8,23 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.*;
+import java.util.List;
+import javax.validation.Valid;
 
 /**
- * The Request Object to Update Spouse Information
+ * Pending Payments Response Object
  */
-@ApiModel(description = "The Request Object to Update Spouse Information")
+@ApiModel(description = "Pending Payments Response Object")
 @Validated
 @Data
 @EqualsAndHashCode
 @ToString
-public class UpdateSpouseRequest   {
-  @JsonProperty("SpouseName")
-  @ApiModelProperty(required = true, value = "The updated name of the Spouse")
-  @NotNull
-  private String spouseName = null;
+public class PendingPaymentsResponse {
+
+    @JsonProperty("PendingPayments")
+    @Valid
+    @ApiModelProperty(value = "List of Payments")
+    private List<PendingPaymentResponse> pendingPayments = null;
 
 }
 

@@ -34,7 +34,7 @@ import com.amdexa.example.arm.model.ImmedPaymentCCResp;
 import com.amdexa.example.arm.model.ImmediatePaymentTokenResponse;
 import com.amdexa.example.arm.model.ImmediatePaymentWithTokenRequest;
 import com.amdexa.example.arm.model.PaymentHistoryResponse;
-import com.amdexa.example.arm.model.PendingPaymentsResp;
+import com.amdexa.example.arm.model.PendingPaymentsResponse;
 import com.amdexa.example.arm.model.ScheduleRequest;
 import com.amdexa.example.arm.model.TokenizePaymentACHRequest;
 import com.amdexa.example.arm.model.TokenizePaymentACHResponse;
@@ -120,7 +120,7 @@ public class PaymentAPIController implements PaymentAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<PendingPaymentsResp> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
+    public ResponseEntity<PendingPaymentsResponse> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

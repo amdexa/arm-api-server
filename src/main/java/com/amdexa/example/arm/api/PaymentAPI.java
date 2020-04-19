@@ -236,11 +236,11 @@ public interface PaymentAPI {
     ResponseEntity<ImmediatePaymentTokenResponse> createImmediatePaymentWithToken( @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The immediate payment with token endpoint request body is a JSON Object follows the immediatePaymentWithTokenRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody ImmediatePaymentWithTokenRequest immediatePaymentWithTokenRequest);
 
 
-    @ApiOperation(value = "", nickname = "getPaymentPending", notes = "Used to get the pending payments for a consumer", response = PendingPaymentsResp.class, authorizations = {
+    @ApiOperation(value = "", nickname = "getPaymentPending", notes = "Used to get the pending payments for a consumer", response = PendingPaymentsResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Payments API", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful Request", response = PendingPaymentsResp.class),
+        @ApiResponse(code = 200, message = "Successful Request", response = PendingPaymentsResponse.class),
         @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
         @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
         @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
@@ -250,7 +250,7 @@ public interface PaymentAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<PendingPaymentsResp> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
+    ResponseEntity<PendingPaymentsResponse> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "createPayment", notes = "Used to create a payment", response = GeneralSuccessResp.class, authorizations = {

@@ -22,14 +22,14 @@ import com.amdexa.example.arm.model.DeleteEmailRequest;
 import com.amdexa.example.arm.model.FinancialProfileResponse;
 import com.amdexa.example.arm.model.GeneralSuccessResp;
 import com.amdexa.example.arm.model.MaritalStatusResponse;
-import com.amdexa.example.arm.model.PoeResponse;
+import com.amdexa.example.arm.model.EmployerResponse;
 import com.amdexa.example.arm.model.SpouseResponse;
 import com.amdexa.example.arm.model.UpdateAddressRequest;
 import com.amdexa.example.arm.model.UpdateEmailRequest;
 import com.amdexa.example.arm.model.UpdateFinancialProfileRequest;
 import com.amdexa.example.arm.model.UpdateMaritalStatusRequest;
 import com.amdexa.example.arm.model.UpdatePhoneRequest;
-import com.amdexa.example.arm.model.UpdatePoeRequest;
+import com.amdexa.example.arm.model.UpdateEmployerRequest;
 import com.amdexa.example.arm.model.UpdateSpouseRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -106,11 +106,11 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
+    public ResponseEntity<EmployerResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> updatePlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The Update POE endpoint request body is a JSON Object following the updatePOERequest schema. The object has the following properties" ,required=true )  @Valid @RequestBody UpdatePoeRequest updatePoeRequest) {
+    public ResponseEntity<GeneralSuccessResp> updatePlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The Update POE endpoint request body is a JSON Object following the updatePOERequest schema. The object has the following properties" ,required=true )  @Valid @RequestBody UpdateEmployerRequest updatePoeRequest) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

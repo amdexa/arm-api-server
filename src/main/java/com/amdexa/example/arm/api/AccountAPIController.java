@@ -41,6 +41,7 @@ import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -79,9 +80,11 @@ public class AccountAPIController implements AccountAPI {
     @Override
     public ResponseEntity<ConsumerResponse> retrieveConsumer(@ApiParam(value = "A unique session id for this login.", required = true) @RequestHeader(value = "authorization", required = true) String sessionId,
                                                              @ApiParam(value = "consumer id to lookup", required = true) @PathVariable long id) {
-        Consumer consumer = consumerService.findById(id);
-        ConsumerResponse consumerResponse = getConsumerResponse().apply(consumer);
-        return new ResponseEntity<>(consumerResponse, HttpStatus.OK);
+        Optional<Consumer> consumer = consumerService.findById(id);
+        if (consumer.isPresent()) {
+            ConsumerResponse consumerResponse = getConsumerResponse().apply(consumer.get());
+            return new ResponseEntity<>(consumerResponse, HttpStatus.OK);
+        } else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @Override

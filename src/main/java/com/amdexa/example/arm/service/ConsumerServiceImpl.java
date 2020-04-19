@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -28,7 +29,7 @@ public class ConsumerServiceImpl implements ConsumerService {
 
     @Override
     @Transactional
-    public Consumer findById(long id) {
+    public Optional<Consumer> findById(long id) {
         return consumerRepository.findById(id);
     }
 

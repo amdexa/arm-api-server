@@ -219,11 +219,11 @@ public interface DemographicAPI {
     ResponseEntity<GeneralSuccessResp> updatePhoneNumber(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "Ten digit phone number.",required=true) @PathVariable("phoneNumber") String phoneNumber,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The update phone request body is a JSON Object following the below properties." ,required=true )  @Valid @RequestBody UpdatePhoneRequest updatePhoneRequest);
 
 
-    @ApiOperation(value = "", nickname = "getPlaceOfEmployment", notes = "Used to get the place of employment for the consumer", response = PoeResponse.class, authorizations = {
+    @ApiOperation(value = "", nickname = "getPlaceOfEmployment", notes = "Used to get the place of employment for the consumer", response = EmployerResponse.class, authorizations = {
         @Authorization(value = "api_key")
     }, tags={ "Demographics API", })
     @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "Successful Request", response = PoeResponse.class),
+        @ApiResponse(code = 200, message = "Successful Request", response = EmployerResponse.class),
         @ApiResponse(code = 400, message = "Bad Request Status Code", response = APIError.class),
         @ApiResponse(code = 401, message = "Unauthorized Status Code", response = APIError.class),
         @ApiResponse(code = 403, message = "Forbidden Status Code", response = APIError.class),
@@ -233,7 +233,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
+    ResponseEntity<EmployerResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updatePlaceOfEmployment", notes = "Used to update the place of employment for the consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -250,7 +250,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.PUT)
-    ResponseEntity<GeneralSuccessResp> updatePlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The Update POE endpoint request body is a JSON Object following the updatePOERequest schema. The object has the following properties" ,required=true )  @Valid @RequestBody UpdatePoeRequest updatePoeRequest);
+    ResponseEntity<GeneralSuccessResp> updatePlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The Update POE endpoint request body is a JSON Object following the updatePOERequest schema. The object has the following properties" ,required=true )  @Valid @RequestBody UpdateEmployerRequest updatePoeRequest);
 
 
     @ApiOperation(value = "", nickname = "getSpouse", notes = "Used to get the spouse information for the consumer", response = SpouseResponse.class, authorizations = {

@@ -4,12 +4,13 @@ import com.amdexa.example.arm.dao.model.Consumer;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public interface ConsumerService {
     Consumer saveConsumer(Consumer student);
 
-    Consumer findById(long id);
+    Optional<Consumer> findById(long id);
 
     Consumer updateConsumer(Consumer student);
 

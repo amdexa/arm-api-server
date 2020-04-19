@@ -8,21 +8,18 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.*;
-
 /**
- * The Request Object to Update Spouse Information
+ * Login Response Object
  */
-@ApiModel(description = "The Request Object to Update Spouse Information")
+@ApiModel(description = "Login Response Object")
 @Validated
 @Data
 @EqualsAndHashCode
 @ToString
-public class UpdateSpouseRequest   {
-  @JsonProperty("SpouseName")
-  @ApiModelProperty(required = true, value = "The updated name of the Spouse")
-  @NotNull
-  private String spouseName = null;
+public class LoginResponse {
+  @JsonProperty("SessionID")
+  @ApiModelProperty(value = "The unique Session ID for this login")
+  private String sessionID = null;
 
 }
 

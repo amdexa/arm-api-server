@@ -5,11 +5,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ConsumerRepository  extends CrudRepository<Consumer, Long> {
 
     List<Consumer> findByFirstNameAndLastName(String firstName, String lastName);
 
-    Consumer findById(long id);
+    Optional<Consumer> findById(long id);
 }

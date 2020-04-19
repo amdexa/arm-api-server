@@ -17,8 +17,8 @@
  */
 package com.amdexa.example.arm.api;
 
-import com.amdexa.example.arm.model.Loginrequest;
-import com.amdexa.example.arm.model.Loginresponse;
+import com.amdexa.example.arm.model.LoginRequest;
+import com.amdexa.example.arm.model.LoginResponse;
 import com.amdexa.example.arm.service.AuthenticationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -53,10 +53,10 @@ public class UserAPIController implements UserAPI {
         this.request = request;
     }
 
-    public ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
+    public ResponseEntity<LoginResponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
                                                             @ApiParam(value = "The Request ID returned", required = true) @PathVariable("requestId") String requestId,
                                                             @ApiParam(value = "A unique session id for this login.") @RequestHeader(value = "authorization", required = false) String sessionId) {
-        return new ResponseEntity<Loginresponse>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<LoginResponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
@@ -65,9 +65,9 @@ public class UserAPIController implements UserAPI {
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Loginresponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true) @Valid @RequestBody Loginrequest loginrequest) {
-        Loginresponse res = new Loginresponse();
-        res.setSessionID(authenticationService.login(loginrequest.getUsername(), loginrequest.getPasssword()));
+    public ResponseEntity<LoginResponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true) @Valid @RequestBody LoginRequest loginrequest) {
+        LoginResponse res = new LoginResponse();
+        res.setSessionID(authenticationService.login(loginrequest.getUsername(), loginrequest.getPassword()));
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
