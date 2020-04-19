@@ -20,9 +20,6 @@ import javax.validation.Valid;
 @EqualsAndHashCode
 @ToString
 public class AccountResponse {
-    @JsonProperty("correlationID")
-    @ApiModelProperty(value = "The Cloud Correlation ID associated with this request.  This ID should be provided to support when troubleshooting.")
-    private String correlationID = null;
 
     @JsonProperty("Consumers")
     @Valid

@@ -24,7 +24,6 @@ import com.amdexa.example.arm.model.SinglePaymentRequest;
 import com.amdexa.example.arm.model.DeletePAPaymentRequest;
 import com.amdexa.example.arm.model.DeletePaymentArrangementRequest;
 import com.amdexa.example.arm.model.DeletePaymentRequest;
-import com.amdexa.example.arm.model.Empty;
 import com.amdexa.example.arm.model.FeeByPercentCalcRequest;
 import com.amdexa.example.arm.model.FeeByPercentCalcResponse;
 import com.amdexa.example.arm.model.GeneralSuccessResp;
@@ -121,7 +120,7 @@ public class PaymentAPIController implements PaymentAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<PendingPaymentsResp> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "" ,required=true )  @Valid @RequestBody Empty empty) {
+    public ResponseEntity<PendingPaymentsResp> getPaymentPending(@ApiParam(value = "Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 

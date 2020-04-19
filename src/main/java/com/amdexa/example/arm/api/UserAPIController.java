@@ -17,7 +17,6 @@
  */
 package com.amdexa.example.arm.api;
 
-import com.amdexa.example.arm.model.Empty;
 import com.amdexa.example.arm.model.Loginrequest;
 import com.amdexa.example.arm.model.Loginresponse;
 import com.amdexa.example.arm.service.AuthenticationService;
@@ -56,14 +55,13 @@ public class UserAPIController implements UserAPI {
 
     public ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
                                                             @ApiParam(value = "The Request ID returned", required = true) @PathVariable("requestId") String requestId,
-                                                            @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty,
                                                             @ApiParam(value = "A unique session id for this login.") @RequestHeader(value = "authorization", required = false) String sessionId) {
         return new ResponseEntity<Loginresponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
                                               @ApiParam(value = "A unique session id for this login. Required", required = true) @RequestHeader(value = "authorization", required = true) String sessionId,
-                                              @ApiParam(value = "The Request ID returned.", required = true) @PathVariable("requestId") String requestId, @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty) {
+                                              @ApiParam(value = "The Request ID returned.", required = true) @PathVariable("requestId") String requestId) {
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
