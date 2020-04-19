@@ -29,7 +29,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> deleteAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The delete address endpoint request body is a JSON Object following the delete address schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeleteAddressRequest deleteAddressRequest);
+    ResponseEntity<GeneralSuccessResp> deleteAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "getAddress", notes = "Used to retrieve the address for a consumer", response = AddressResponse.class, authorizations = {
@@ -46,7 +46,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<AddressResponse> getAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get address endpoint request body is a JSON Object following the addressRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody AddressRequest addressRequest);
+    ResponseEntity<AddressResponse> getAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updateAddress", notes = "Used to update the address for a consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -114,7 +114,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<FinancialProfileResponse> getFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get financial profile endpoint request body is a JSON Object following the financialProfileRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody FinancialProfileRequest financialProfileRequest);
+    ResponseEntity<FinancialProfileResponse> getFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updateFinancialProfile", notes = "Used to update the financial profile the consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -148,7 +148,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<MaritalStatusResponse> getMaritalStatus(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get marital status endpoint request body is a JSON Object following the maritalStatusRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody MaritalStatusRequest maritalStatusRequest);
+    ResponseEntity<MaritalStatusResponse> getMaritalStatus(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updateMaritalStatus", notes = "Used to update the marital status for the consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -182,7 +182,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.DELETE)
-    ResponseEntity<GeneralSuccessResp> deletePhoneNumber(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The 10 digit Phone Number to remove",required=true) @PathVariable("phoneNumber") String phoneNumber,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The delete phone endpoint request body is a JSON Object following the delete phone schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeletePhoneRequest deletePhoneRequest);
+    ResponseEntity<GeneralSuccessResp> deletePhoneNumber(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The 10 digit Phone Number to remove",required=true) @PathVariable("phoneNumber") String phoneNumber,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updatePhoneNumber", notes = "Used to update the phone number for the consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -216,7 +216,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get POE endpoint request body is a JSON Object following the POE schema.  The object has the following properties" ,required=true )  @Valid @RequestBody PoeRequest poeRequest);
+    ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updatePlaceOfEmployment", notes = "Used to update the place of employment for the consumer", response = GeneralSuccessResp.class, authorizations = {
@@ -250,7 +250,7 @@ public interface DemographicAPI {
         produces = { "application/json" }, 
         consumes = { "application/json" },
         method = RequestMethod.GET)
-    ResponseEntity<SpouseResponse> getSpouse(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get spouse endpoint request body is a JSON Object following the spouseRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody SpouseRequest spouseRequest);
+    ResponseEntity<SpouseResponse> getSpouse(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId);
 
 
     @ApiOperation(value = "", nickname = "updateSpouse", notes = "Used to update the spouse information for the consumer", response = GeneralSuccessResp.class, authorizations = {

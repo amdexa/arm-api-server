@@ -17,7 +17,6 @@ import com.amdexa.misc.arm.model.ImmedPaymentCCRequest;
 import com.amdexa.misc.arm.model.ImmedPaymentCCResp;
 import com.amdexa.misc.arm.model.ImmediatePaymentTokenResponse;
 import com.amdexa.misc.arm.model.ImmediatePaymentWithTokenRequest;
-import com.amdexa.misc.arm.model.PaymentHistoryRequest;
 import com.amdexa.misc.arm.model.PaymentHistoryResponse;
 import com.amdexa.misc.arm.model.PendingPaymentsResp;
 import com.amdexa.misc.arm.model.ScheduleRequest;
@@ -170,7 +169,7 @@ public class PaymentAPIController implements PaymentAPI {
         return new ResponseEntity<FeeByPercentCalcResponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<PaymentHistoryResponse> getPaymentHistory(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The payment history endpoint request body is a JSON Object following the paymentHistoryRequest schema. The object has the following properties:" ,required=true )  @Valid @RequestBody PaymentHistoryRequest paymentHistoryRequest) {
+    public ResponseEntity<PaymentHistoryResponse> getPaymentHistory(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

@@ -1,18 +1,11 @@
 package com.amdexa.misc.arm.api;
 
-import com.amdexa.misc.arm.model.AddressRequest;
 import com.amdexa.misc.arm.model.AddressResponse;
-import com.amdexa.misc.arm.model.DeleteAddressRequest;
 import com.amdexa.misc.arm.model.DeleteEmailRequest;
-import com.amdexa.misc.arm.model.DeletePhoneRequest;
-import com.amdexa.misc.arm.model.FinancialProfileRequest;
 import com.amdexa.misc.arm.model.FinancialProfileResponse;
 import com.amdexa.misc.arm.model.GeneralSuccessResp;
-import com.amdexa.misc.arm.model.MaritalStatusRequest;
 import com.amdexa.misc.arm.model.MaritalStatusResponse;
-import com.amdexa.misc.arm.model.PoeRequest;
 import com.amdexa.misc.arm.model.PoeResponse;
-import com.amdexa.misc.arm.model.SpouseRequest;
 import com.amdexa.misc.arm.model.SpouseResponse;
 import com.amdexa.misc.arm.model.UpdateAddressRequest;
 import com.amdexa.misc.arm.model.UpdateEmailRequest;
@@ -52,7 +45,7 @@ public class DemographicAPIController implements DemographicAPI {
         this.request = request;
     }
 
-    public ResponseEntity<GeneralSuccessResp> deleteAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The delete address endpoint request body is a JSON Object following the delete address schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody DeleteAddressRequest deleteAddressRequest) {
+    public ResponseEntity<GeneralSuccessResp> deleteAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -66,7 +59,8 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<AddressResponse> getAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get address endpoint request body is a JSON Object following the addressRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody AddressRequest addressRequest) {
+    public ResponseEntity<AddressResponse> getAddress(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,
+                                                      @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -122,7 +116,7 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<FinancialProfileResponse> getFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get financial profile endpoint request body is a JSON Object following the financialProfileRequest schema.  The object has the following properties:" ,required=true )  @Valid @RequestBody FinancialProfileRequest financialProfileRequest) {
+    public ResponseEntity<FinancialProfileResponse> getFinancialProfile(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -150,7 +144,7 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<MaritalStatusResponse> getMaritalStatus(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get marital status endpoint request body is a JSON Object following the maritalStatusRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody MaritalStatusRequest maritalStatusRequest) {
+    public ResponseEntity<MaritalStatusResponse> getMaritalStatus(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -178,7 +172,7 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<GeneralSuccessResp> deletePhoneNumber(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The 10 digit Phone Number to remove",required=true) @PathVariable("phoneNumber") String phoneNumber,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The delete phone endpoint request body is a JSON Object following the delete phone schema.  The object has the following properties." ,required=true )  @Valid @RequestBody DeletePhoneRequest deletePhoneRequest) {
+    public ResponseEntity<GeneralSuccessResp> deletePhoneNumber(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId, @ApiParam(value = "The 10 digit Phone Number to remove",required=true) @PathVariable("phoneNumber") String phoneNumber,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -206,7 +200,7 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get POE endpoint request body is a JSON Object following the POE schema.  The object has the following properties" ,required=true )  @Valid @RequestBody PoeRequest poeRequest) {
+    public ResponseEntity<PoeResponse> getPlaceOfEmployment(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
@@ -234,7 +228,7 @@ public class DemographicAPIController implements DemographicAPI {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<SpouseResponse> getSpouse(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId, @ApiParam(value = "The get spouse endpoint request body is a JSON Object following the spouseRequest schema.  The object has the following properties" ,required=true )  @Valid @RequestBody SpouseRequest spouseRequest) {
+    public ResponseEntity<SpouseResponse> getSpouse(@ApiParam(value = "The Consumer ID.",required=true) @PathVariable("consumerId") String consumerId,  @ApiParam(value = "A unique session id for this login." ,required=true) @RequestHeader(value="authorization", required=true) String sessionId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {

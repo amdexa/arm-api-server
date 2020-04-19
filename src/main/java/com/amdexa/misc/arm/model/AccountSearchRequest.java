@@ -4,6 +4,9 @@ import java.util.Objects;
 
 import com.amdexa.misc.arm.model.common.PredictableRequest;
 import io.swagger.annotations.ApiModel;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.validation.annotation.Validated;
 
 /**
@@ -11,42 +14,17 @@ import org.springframework.validation.annotation.Validated;
  */
 @ApiModel(description = "Account search request object")
 @Validated
-
-
+@Data
+@EqualsAndHashCode
+@ToString
 public class AccountSearchRequest extends PredictableRequest {
 
-  /**
+  /*
    * SocialSecurityNumber
    * PhoneNumber
    * FirstName
    * LastName
    * AccountNumber
    */
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AccountSearchRequest accountSearchRequest = (AccountSearchRequest) o;
-    return Objects.equals(this.predicates, accountSearchRequest.predicates);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(predicates);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AccountSearchRequest {\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
 }
 
