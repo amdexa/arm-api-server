@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
 import org.threeten.bp.ZonedDateTime;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.amdexa.misc.arm.dao.repository")
+@EnableJpaRepositories(basePackages = "com.amdexa.example.arm.dao.repository")
 public class AppConfiguration {
 
   @Bean

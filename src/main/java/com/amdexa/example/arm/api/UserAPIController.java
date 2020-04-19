@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2020 Amdexa. (https://amdexa.com) All Rights Reserved.
+ *
+ * Amdexa licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
 package com.amdexa.example.arm.api;
 
 import com.amdexa.example.arm.model.Empty;
@@ -18,7 +35,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 
 @Controller
 public class UserAPIController implements UserAPI {
@@ -38,38 +54,23 @@ public class UserAPIController implements UserAPI {
         this.request = request;
     }
 
-    public ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username, @ApiParam(value = "The Request ID returned", required = true) @PathVariable("requestId") String requestId, @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty, @ApiParam(value = "A unique session id for this login.") @RequestHeader(value = "authorization", required = false) String sessionId) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<Loginresponse>(objectMapper.readValue("{  \"SessionID\" : \"SessionID\"}", Loginresponse.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Loginresponse>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
+    public ResponseEntity<Loginresponse> checkLoginResponse(@ApiParam(value = "The username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
+                                                            @ApiParam(value = "The Request ID returned", required = true) @PathVariable("requestId") String requestId,
+                                                            @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty,
+                                                            @ApiParam(value = "A unique session id for this login.") @RequestHeader(value = "authorization", required = false) String sessionId) {
         return new ResponseEntity<Loginresponse>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username, @ApiParam(value = "A unique session id for this login. Required", required = true) @RequestHeader(value = "authorization", required = true) String sessionId, @ApiParam(value = "The Request ID returned.", required = true) @PathVariable("requestId") String requestId, @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty) {
-        String accept = request.getHeader("Accept");
+    public ResponseEntity<Void> checkResponse(@ApiParam(value = "Request Header of the username of the user for the login.  Required.", required = true) @RequestHeader(value = "username", required = true) String username,
+                                              @ApiParam(value = "A unique session id for this login. Required", required = true) @RequestHeader(value = "authorization", required = true) String sessionId,
+                                              @ApiParam(value = "The Request ID returned.", required = true) @PathVariable("requestId") String requestId, @ApiParam(value = "", required = true) @Valid @RequestBody Empty empty) {
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<Loginresponse> login(@ApiParam(value = "The Login Request Body is a JSON object with the following properties:", required = true) @Valid @RequestBody Loginrequest loginrequest) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                String login = authenticationService.login(loginrequest.getUsername(), loginrequest.getPasssword());
-                return new ResponseEntity<>(objectMapper.readValue("{  \"SessionID\" : \"" + login + "\"}", Loginresponse.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+        Loginresponse res = new Loginresponse();
+        res.setSessionID(authenticationService.login(loginrequest.getUsername(), loginrequest.getPasssword()));
+        return new ResponseEntity<>(res, HttpStatus.OK);
     }
 
 }

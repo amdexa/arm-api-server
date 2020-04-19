@@ -20,7 +20,7 @@ spring:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5InnoDBDialect
     jackson:
-        date-format: com.amdexa.misc.arm.RFC3339DateFormat
+        date-format: com.amdexa.example.arm.RFC3339DateFormat
         serialization:
             WRITE_DATES_AS_TIMESTAMPS: false
     security:
@@ -43,4 +43,4 @@ logging:
     level:
         org:
             springframework:
-                security: DEBUG
+                security: INFO

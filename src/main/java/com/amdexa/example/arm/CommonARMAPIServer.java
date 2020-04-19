@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2020 Amdexa. (https://amdexa.com) All Rights Reserved.
  *
- * Amdexa. licenses this file to you under the Apache License,
+ * Amdexa licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,11 +27,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.amdexa.misc.arm",
-        "com.amdexa.misc.arm.api",
-        "com.amdexa.misc.arm.configuration",
-        "com.amdexa.misc.arm.service"})
-@EntityScan("com.amdexa.misc.arm.dao.model")
+@ComponentScan(basePackages = {"com.amdexa.example.arm",
+        "com.amdexa.example.arm.api",
+        "com.amdexa.example.arm.configuration",
+        "com.amdexa.example.arm.service"})
+@EntityScan("com.amdexa.example.arm.dao.model")
 public class CommonARMAPIServer {
 
     public static void main(String[] args) {
