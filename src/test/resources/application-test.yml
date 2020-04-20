@@ -1,0 +1,40 @@
+server:
+    port: 8080
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        url: jdbc:h2:mem:testdb
+        username: sa
+        password: password
+    jpa:
+        hibernate.ddl-auto: update
+        generate-ddl: true
+        show-sql: true
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    jackson:
+        date-format: com.amdexa.example.arm.RFC3339DateFormat
+        serialization:
+            WRITE_DATES_AS_TIMESTAMPS: false
+    security:
+        oauth2:
+            resourceserver:
+                jwt:
+                    issuer-uri: https://localhost:8443/
+springfox:
+    documentation:
+        swagger:
+            v2:
+                path: /api-docs
+
+auth0:
+    audience: http://localhost:8080/
+    client_id: test
+    client_secret: test
+
+logging:
+    level:
+        org:
+            springframework:
+                security: DEBUG
