@@ -22,6 +22,7 @@ import com.amdexa.example.arm.model.AccountResponse;
 import com.amdexa.example.arm.model.AccountSearchRequest;
 import com.amdexa.example.arm.model.ConsumerResponse;
 import com.amdexa.example.arm.dao.model.Consumer;
+import com.amdexa.example.arm.model.common.Predicate;
 import com.amdexa.example.arm.service.ConsumerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -42,6 +43,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -69,7 +71,9 @@ public class AccountAPIController implements AccountAPI {
 
     public ResponseEntity<AccountResponse> search(@ApiParam(value = "A unique session id for this login.", required = true) @RequestHeader(value = "authorization", required = true) String sessionId, @ApiParam(value = "The Account Search request body is a JSON Object follows the accountSearchRequest schema.  The object has the following properties:", required = true) @Valid @RequestBody AccountSearchRequest accountSearchRequest) {
         AccountResponse response = new AccountResponse();
-        List<ConsumerResponse> consumers = consumerService.listConsumers().stream()
+        Set<Predicate> predicates = accountSearchRequest.predicates;
+        List<ConsumerResponse> consumers = consumerService.findByCriteria(
+                predicates.stream().collect(Collectors.toMap(Predicate::getField, Predicate::getValue))).stream()
                 .map(getConsumerResponse())
                 .collect(Collectors.toList());
         response.setConsumers(consumers);
