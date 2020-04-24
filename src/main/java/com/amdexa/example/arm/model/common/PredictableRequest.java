@@ -26,5 +26,5 @@ public abstract class PredictableRequest {
 
     @JsonProperty("predicates")
     @Valid
-    public Set<Predicate> predicates;
+    public Set<QueryPredicate> queryPredicates;
 }

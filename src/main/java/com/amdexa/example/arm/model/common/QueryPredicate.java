@@ -24,7 +24,7 @@ import lombok.ToString;
 @Data
 @EqualsAndHashCode
 @ToString
-public class Predicate {
+public class QueryPredicate {
     private String field;
     private String value;
     private String operator;

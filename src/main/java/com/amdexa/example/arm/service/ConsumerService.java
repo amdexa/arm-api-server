@@ -18,11 +18,12 @@
 package com.amdexa.example.arm.service;
 
 import com.amdexa.example.arm.dao.model.Consumer;
+import com.amdexa.example.arm.model.common.QueryPredicate;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 @Component
 public interface ConsumerService {
@@ -34,5 +35,5 @@ public interface ConsumerService {
 
     List<Consumer> listConsumers();
 
-    List<Consumer> findByCriteria(Map<String, String> criteria);
+    List<Consumer> findByCriteria(Set<QueryPredicate> queryPredicates);
 }

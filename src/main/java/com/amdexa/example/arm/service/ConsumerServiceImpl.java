@@ -20,6 +20,7 @@ package com.amdexa.example.arm.service;
 import com.amdexa.example.arm.dao.model.Consumer;
 import com.amdexa.example.arm.dao.repository.ConsumerAccountRepository;
 import com.amdexa.example.arm.dao.repository.ConsumerRepository;
+import com.amdexa.example.arm.model.common.QueryPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -28,8 +29,8 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -67,12 +68,24 @@ public class ConsumerServiceImpl implements ConsumerService {
     }
 
     @Override
-    public List<Consumer> findByCriteria(Map<String, String> criteria) {
+    public List<Consumer> findByCriteria(Set<QueryPredicate> criteria) {
         return consumerRepository.findAll((Specification<Consumer>) (root, criteriaQuery, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
-            if(null != criteria){
-                criteria.forEach((key, value) -> {
-                    predicates.add(criteriaBuilder.and(criteriaBuilder.equal(root.get(key), value)));
+            if (null != criteria) {
+                criteria.forEach(c -> {
+                    switch (c.getOperator()) {
+                        case ">":
+                            predicates.add(criteriaBuilder.and(
+                                    criteriaBuilder.greaterThan(root.get(c.getField()), c.getValue())));
+                            break;
+                        case "<":
+                            predicates.add(criteriaBuilder.and(
+                                    criteriaBuilder.lessThan(root.get(c.getField()), c.getValue())));
+                            break;
+                        default:
+                            predicates.add(criteriaBuilder.and(
+                                    criteriaBuilder.equal(root.get(c.getField()), c.getValue())));
+                    }
                 });
             }
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
