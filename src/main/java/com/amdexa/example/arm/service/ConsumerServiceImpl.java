@@ -78,9 +78,17 @@ public class ConsumerServiceImpl implements ConsumerService {
                             predicates.add(criteriaBuilder.and(
                                     criteriaBuilder.greaterThan(root.get(c.getField()), c.getValue())));
                             break;
+                        case ">=":
+                            predicates.add(criteriaBuilder.and(
+                                    criteriaBuilder.greaterThanOrEqualTo(root.get(c.getField()), c.getValue())));
+                            break;
                         case "<":
                             predicates.add(criteriaBuilder.and(
                                     criteriaBuilder.lessThan(root.get(c.getField()), c.getValue())));
+                            break;
+                        case "<=":
+                            predicates.add(criteriaBuilder.and(
+                                    criteriaBuilder.lessThanOrEqualTo(root.get(c.getField()), c.getValue())));
                             break;
                         default:
                             predicates.add(criteriaBuilder.and(
