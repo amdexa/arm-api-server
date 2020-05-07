@@ -1,4 +1,4 @@
-# DEPRECATED
+# DEPRECATED - 7th May 2020
 This is no longer developed. only 5% of original planned work complated. 
 
 # Accounts receivable management API server
